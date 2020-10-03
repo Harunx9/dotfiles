@@ -1,0 +1,11 @@
+{
+  "tsserver.npm": "/Users/szymonwanot/.nvm/versions/node/v12.14.1/bin/npm",
+  "json.format.enable": true,
+  "javascript.suggest.autoImports": true,
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "omnisharp.useDotnet": true,
+  "rust-analyzer.checkOnSave.enable": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.quitOnOpen": true,
+  "diagnostic.virtualText": true
+}
