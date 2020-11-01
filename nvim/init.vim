@@ -28,13 +28,8 @@ Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'rakr/vim-one'
-Plug 'gruvbox-community/gruvbox'
-Plug 'ayu-theme/ayu-vim' 
-Plug 'tomasiser/vim-code-dark'
 Plug 'arcticicestudio/nord-vim'
-Plug 'bluz71/vim-moonfly-colors'
+Plug 'mhartington/oceanic-next'
 call plug#end()
 
 "######  Base settings ############
@@ -65,8 +60,6 @@ set termguicolors
 
 set background=dark
 colorscheme nord
-"let g:gruvbox_contrast_dark='hard'
-"let g:gruvbox_contrast_light='hard'
 
 set cursorline
 set clipboard=unnamed
