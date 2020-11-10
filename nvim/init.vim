@@ -20,7 +20,6 @@ Plug 'sheerun/vim-polyglot'
 
 "RUST
 Plug 'rust-lang/rust.vim'
-Plug 'arzg/vim-rust-syntax-ext'
 Plug 'mhinz/vim-crates'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -29,7 +28,8 @@ Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
-Plug 'mhartington/oceanic-next'
+Plug 'adrian5/oceanic-next-vim'
+Plug 'patstockwell/vim-monokai-tasty'
 call plug#end()
 
 "######  Base settings ############
@@ -59,6 +59,8 @@ imap <right> <nop>
 set termguicolors
 
 set background=dark
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
 colorscheme nord
 
 set cursorline
