@@ -34,8 +34,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 0
-    y: 0
+    x: 1
+    y: 1
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -177,53 +177,43 @@ schemes:
       white: "#3c3836"
   palenight: &dark
     primary:
-      background: "#2e3440"
-      foreground: "#d8dee9"
-      dim_foreground: "#a5abb6"
+      background: '0x1b2b34'
+      foreground: '0xc0c5ce'
+  
+    # Colors the cursor will use if `custom_cursor_colors` is true
     cursor:
-      text: "#2e3440"
-      cursor: "#d8dee9"
-    vi_mode_cursor:
-      text: "#2e3440"
-      cursor: "#d8dee9"
-    selection:
-      text: CellForeground
-      background: "#4c566a"
-    search:
-      matches:
-        foreground: CellBackground
-        background: "#88c0d0"
-      bar:
-        background: "#434c5e"
-        foreground: "#d8dee9"
+      text: '0x1b2b34'
+      cursor: '0xc0c5ce'
+  
+    # Normal colors
     normal:
-      black: "#3b4252"
-      red: "#bf616a"
-      green: "#a3be8c"
-      yellow: "#ebcb8b"
-      blue: "#81a1c1"
-      magenta: "#b48ead"
-      cyan: "#88c0d0"
-      white: "#e5e9f0"
+      black:   '0x1b2b34'
+      red:     '0xec5f67'
+      green:   '0x99c794'
+      yellow:  '0xfac863'
+      blue:    '0x6699cc'
+      magenta: '0xc594c5'
+      cyan:    '0x5fb3b3'
+      white:   '0xc0c5ce'
+  
+    # Bright colors
     bright:
-      black: "#4c566a"
-      red: "#bf616a"
-      green: "#a3be8c"
-      yellow: "#ebcb8b"
-      blue: "#81a1c1"
-      magenta: "#b48ead"
-      cyan: "#8fbcbb"
-      white: "#eceff4"
-    dim:
-      black: "#373e4d"
-      red: "#94545d"
-      green: "#809575"
-      yellow: "#b29e75"
-      blue: "#68809a"
-      magenta: "#8c738c"
-      cyan: "#6d96a5"
-      white: "#aeb3bb"
-
+      black:   '0x65737e'
+      red:     '0xec5f67'
+      green:   '0x99c794'
+      yellow:  '0xfac863'
+      blue:    '0x6699cc'
+      magenta: '0xc594c5'
+      cyan:    '0x5fb3b3'
+      white:   '0xd8dee9'
+  
+    indexed_colors:
+      - { index: 16, color: '0xf99157' }
+      - { index: 17, color: '0xab7967' }
+      - { index: 18, color: '0x343d46' }
+      - { index: 19, color: '0x4f5b66' }
+      - { index: 20, color: '0xa7adba' }
+      - { index: 21, color: '0xcdd3de' }
 colors:
   *dark
   # Default colors

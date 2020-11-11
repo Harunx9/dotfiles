@@ -1,13 +1,13 @@
 {
-  "tsserver.npm": "/tmp/fnm-shell-1521999/bin/npm",
-  "json.format.enable": true,
-  "javascript.suggest.autoImports": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "*"
-  ],
-  "omnisharp.useDotnet": true,
-  "rust-analyzer.checkOnSave.enable": true,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.quitOnOpen": true,
-  "diagnostic.virtualText": true
+    "tsserver.npm": "/tmp/fnm-shell-1521999/bin/npm",
+    "json.format.enable": true,
+    "javascript.suggest.autoImports": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "*"
+    ],
+    "rust-analyzer.checkOnSave.enable": true,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.quitOnOpen": true,
+    "diagnostic.virtualText": true,
+    "codeLens.enable": true
 }

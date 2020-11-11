@@ -29,7 +29,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
 Plug 'adrian5/oceanic-next-vim'
-Plug 'patstockwell/vim-monokai-tasty'
+Plug 'crusoexia/vim-monokai'
 call plug#end()
 
 "######  Base settings ############
@@ -59,9 +59,18 @@ imap <right> <nop>
 set termguicolors
 
 set background=dark
-let g:nord_italic = 1
-let g:nord_italic_comments = 1
-colorscheme nord
+" NORD
+"let g:nord_italic = 1
+"let g:nord_italic_comments = 1
+
+"MONOKAI
+"set t_Co=256
+"let g:monokai_term_italic = 1
+
+"OCEANIC NEXT
+
+
+colorscheme oceanicnext
 
 set cursorline
 set clipboard=unnamed
@@ -115,7 +124,7 @@ augroup END
 "###################################
 
 " ############### AIRLINE ############
-let g:airline_theme='nord'
+let g:airline_theme='oceanicnext'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#show_splits = 1
