@@ -28,8 +28,7 @@ Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
-Plug 'adrian5/oceanic-next-vim'
-Plug 'crusoexia/vim-monokai'
+Plug 'sainnhe/sonokai'
 call plug#end()
 
 "######  Base settings ############
@@ -63,14 +62,12 @@ set background=dark
 "let g:nord_italic = 1
 "let g:nord_italic_comments = 1
 
-"MONOKAI
-"set t_Co=256
-"let g:monokai_term_italic = 1
+" Sonokai
+let g:sonokai_style = 'andromeda'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
 
-"OCEANIC NEXT
-
-
-colorscheme oceanicnext
+colorscheme sonokai
 
 set cursorline
 set clipboard=unnamed
@@ -124,7 +121,7 @@ augroup END
 "###################################
 
 " ############### AIRLINE ############
-let g:airline_theme='oceanicnext'
+let g:airline_theme='sonokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#show_splits = 1
@@ -315,19 +312,3 @@ if has('nvim')
   autocmd BufRead Cargo.toml call crates#toggle()
 endif
 " ##################################################
-
-" ############### STARTYIFY #########################
-let s:startify_ascii_header = [
- \ '                                        ▟▙            ',
- \ '                                        ▝▘            ',
- \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
- \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
- \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
- \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
- \ '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
- \ '',
- \]
-let g:startify_custom_header = map(s:startify_ascii_header +
-        \ startify#fortune#quote(), '"   ".v:val')
-
-

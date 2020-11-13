@@ -112,6 +112,10 @@ font:
     family: "MesloLGS NF"
     style: Bold
 
+  bold_italic:
+    family: "MesloLGS NF"
+    style: Bold Italic
+
   # Point size
   size: 18.0
 
@@ -147,75 +151,32 @@ font:
   # If `true`, bold text is drawn using the bright color variants.
   #draw_bold_text_with_bright_colors: true
 
-schemes:
-  gruvbox_light: &light # hard contrast: background = '#f9f5d7'
-    primary:
-      background: "#fbf1c7"
-      # soft contrast: background = '#f2e5bc'
-      foreground: "#3c3836"
 
-    # Normal colors
-    normal:
-      black: "#fbf1c7"
-      red: "#cc241d"
-      green: "#98971a"
-      yellow: "#d79921"
-      blue: "#458588"
-      magenta: "#b16286"
-      cyan: "#689d6a"
-      white: "#7c6f64"
-
-    # Bright colors
-    bright:
-      black: "#928374"
-      red: "#9d0006"
-      green: "#79740e"
-      yellow: "#b57614"
-      blue: "#076678"
-      magenta: "#8f3f71"
-      cyan: "#427b58"
-      white: "#3c3836"
-  palenight: &dark
-    primary:
-      background: '0x1b2b34'
-      foreground: '0xc0c5ce'
-  
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: '0x1b2b34'
-      cursor: '0xc0c5ce'
-  
-    # Normal colors
-    normal:
-      black:   '0x1b2b34'
-      red:     '0xec5f67'
-      green:   '0x99c794'
-      yellow:  '0xfac863'
-      blue:    '0x6699cc'
-      magenta: '0xc594c5'
-      cyan:    '0x5fb3b3'
-      white:   '0xc0c5ce'
-  
-    # Bright colors
-    bright:
-      black:   '0x65737e'
-      red:     '0xec5f67'
-      green:   '0x99c794'
-      yellow:  '0xfac863'
-      blue:    '0x6699cc'
-      magenta: '0xc594c5'
-      cyan:    '0x5fb3b3'
-      white:   '0xd8dee9'
-  
-    indexed_colors:
-      - { index: 16, color: '0xf99157' }
-      - { index: 17, color: '0xab7967' }
-      - { index: 18, color: '0x343d46' }
-      - { index: 19, color: '0x4f5b66' }
-      - { index: 20, color: '0xa7adba' }
-      - { index: 21, color: '0xcdd3de' }
+ 
 colors:
-  *dark
+  primary:
+    background: "0x2b2d3a"
+    foreground: "0xe1e3e4"
+
+  normal:
+    black: "0x181a1c"
+    red: "0xfb617e"
+    green: "0x9ed06c"
+    yellow: "0xedc763"
+    blue: "0x6dcae8"
+    magenta: "0xbb97ee"
+    cyan: "0xf89860"
+    white: "0xe1e3e4"
+
+  bright:
+    black: "0x181a1c"
+    red: "0xfb617e"
+    green: "0x9ed06c"
+    yellow: "0xedc763"
+    blue: "0x6dcae8"
+    magenta: "0xbb97ee"
+    cyan: "0xf89860"
+    white: "0xe1e3e4"
   # Default colors
 
 # Visual Bell
