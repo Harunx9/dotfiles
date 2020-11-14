@@ -147,6 +147,9 @@ let g:airline_mode_map = {
 			\ 'V'      : '<VL>',
 			\ ''     : '<VB>',
 			\ }
+
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
