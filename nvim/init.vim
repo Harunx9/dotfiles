@@ -1,3 +1,4 @@
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -6,14 +7,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'wakatime/vim-wakatime'
 Plug 'mhinz/vim-startify'
-Plug 'majutsushi/tagbar'
-Plug 'junegunn/rainbow_parentheses.vim'
     
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
     
 Plug 'matze/vim-move'
 Plug 'easymotion/vim-easymotion'
+Plug 'luochen1990/rainbow'
 
 Plug 'vim-syntastic/syntastic'
 Plug 'sheerun/vim-polyglot'
@@ -310,15 +310,11 @@ nmap <C-n> :CocCommand explorer<CR>
 "######################## Vim which key ####################
 nnoremap <silent> <leader> :WhichKey ','<CR>
 
-"################### Rainbow brackets #########################
-let g:rainbow#pairs = [["<",">"], ['(', ')'], ['[',']'], ['{', '}']]
-augroup rainbow_brackets
-    autocmd!
-    autocmd FileType rust,vim,cpp,javascript,json RainbowParentheses
-augroup END
-
 " #################### Vim crates ##################
 if has('nvim')
   autocmd BufRead Cargo.toml call crates#toggle()
 endif
 " ##################################################
+
+" Rainbow brackets
+let g:rainbow_active = 1
