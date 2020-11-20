@@ -42,6 +42,7 @@ let mapleader = ','
 "Save file
 map <leader>w :w<cr>
 "Buffer switch 
+map <C-w> :bd<CR>
 map <leader>bn :bn<cr>
 map <leader>bp :bp<cr>
 map <leader>bd :bd<cr>

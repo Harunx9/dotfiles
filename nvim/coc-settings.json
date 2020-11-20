@@ -8,6 +8,7 @@
     "rust-analyzer.checkOnSave.enable": true,
     "explorer.icon.enableNerdfont": true,
     "explorer.quitOnOpen": true,
+    "explorer.file.showHiddenFiles": true,
     "diagnostic.virtualText": true,
     "codeLens.enable": true
 }
