@@ -25,7 +25,6 @@ Plug 'mhinz/vim-crates'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf', {'branch': 'release'}
 
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sainnhe/sonokai'
@@ -252,7 +251,7 @@ nmap <leader>f  <Plug>(coc-format-selected)
 augroup mygroup
 	autocmd!
 	" Setup formatexpr specified filetype(s).
-	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+	autocmd FileType typescript,json,rust setl formatexpr=CocAction('formatSelected')
 	" Update signature help on jump placeholder
 	autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
