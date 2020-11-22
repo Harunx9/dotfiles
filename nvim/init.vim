@@ -1,4 +1,3 @@
-
 call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -108,6 +107,7 @@ let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
       \ }
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:fzf_nvim_statusline = 0
 let g:fzf_layout = { 'window' : {'width' : 0.8, 'height':0.8 }}
 nnoremap <C-p> :Files<cr>
