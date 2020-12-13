@@ -1,0 +1,51 @@
+[bar/first]
+enable-ipc = true
+monitor = DisplayPort-0
+heigth = 60
+modules-left = i3
+modules-right = date
+scroll-up = "#i3.prev"
+scroll-down = "#i3.next"
+background = #2B2D3A
+foreground = #E1E3E4
+padding = 3
+font-0 = "MesloLGS NF;size=14;2"
+tray-position = center
+tray-background = ${self.background}
+wm-restack = i3
+
+[bar/second]
+enable-ipc = true
+monitor = DisplayPort-1
+heigth = 50
+modules-left = i3
+scroll-up = "#i3.prev"
+scroll-down = "#i3.next"
+background = #2B2D3A
+foreground = #E1E3E4
+padding = 3
+font-0 = "MesloLGS NF;size=12;2"
+tray-position = none 
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = false
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+label-focused = 綠
+label-focused-foreground = #2B2D3A
+label-focused-background = #E1E3E4
+label-unfocused = 祿
+
+[module/date]
+type = internal/date
+interval = 1.0
+label = %date% %time%
+date = %Y-%m-%d%
+time = %H:%M:%S
+

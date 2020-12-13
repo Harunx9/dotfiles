@@ -69,7 +69,7 @@ let g:sonokai_disable_italic_comment = 1
 colorscheme sonokai
 
 set cursorline
-set clipboard=unnamed
+set clipboard+=unnamedplus
 set colorcolumn=100
 set tabstop=4
 set softtabstop=0 
