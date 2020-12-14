@@ -10,6 +10,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+exec --no-startup-id ~/.config/polybar/run.sh
+
 #remap caps to escape
 exec setxkbmap pl -option caps:escape
 exec setxkbmap pl -option caps:escape
@@ -180,4 +182,6 @@ bar {
      #   }
 }
 
+exec --no-startup-id feh --bg-fill ~/.config/i3/jakub-rozalski-1920-winter-patrols.jpg
 exec --no-startup-id /usr/bin/blueman-applet 
+exec --no-startup-id ~/.config/autostart/jetbrains-toolbox.desktop

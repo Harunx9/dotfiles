@@ -1,30 +1,43 @@
+[colors]
+background = #2B2D3A
+foreground = #E1E3E4
+normal-black = #181A1C
+normal-red = #FB617E
+normal-green = #9ED06C
+normal-yellow = #EDC763
+normal-blue = #6DCAE8
+normal-magneta = #BB97EE
+normal-cyan = #F89860
+normal-white = #E1E3E4
+
+[settings]
+screenchange-reload = true
+
 [bar/first]
 enable-ipc = true
 monitor = DisplayPort-0
-heigth = 60
 modules-left = i3
-modules-right = date
+modules-right = pulseaudio date
 scroll-up = "#i3.prev"
 scroll-down = "#i3.next"
-background = #2B2D3A
-foreground = #E1E3E4
-padding = 3
-font-0 = "MesloLGS NF;size=14;2"
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding = 2
+font-0 = "MesloLGS NF:style=Regular;size=20;2"
 tray-position = center
-tray-background = ${self.background}
+tray-background = ${colors.background}
 wm-restack = i3
 
 [bar/second]
 enable-ipc = true
 monitor = DisplayPort-1
-heigth = 50
 modules-left = i3
 scroll-up = "#i3.prev"
 scroll-down = "#i3.next"
-background = #2B2D3A
-foreground = #E1E3E4
-padding = 3
-font-0 = "MesloLGS NF;size=12;2"
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding = 2
+font-0 = "MesloLGS NF:style=Regular;size=12;2"
 tray-position = none 
 
 [module/i3]
@@ -37,10 +50,19 @@ enable-scroll = false
 wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
-label-focused = 綠
-label-focused-foreground = #2B2D3A
-label-focused-background = #E1E3E4
-label-unfocused = 祿
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.normal-yellow}
+
+label-focused = ﱣ
+label-focused-padding = 1
+
+label-unfocused = ﱤ  
+label-unfocused-padding = 1
+
+label-visible = ﱤ  
+label-visible-padding = 1
 
 [module/date]
 type = internal/date
@@ -49,3 +71,17 @@ label = %date% %time%
 date = %Y-%m-%d%
 time = %H:%M:%S
 
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+use-ui-max = true
+
+interval = 5
+format-volume = <ramp-volume> <label-volume> 
+label-muted = 婢muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 墳
+ramp-volume-2 = 
