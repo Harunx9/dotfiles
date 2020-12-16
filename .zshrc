@@ -10,6 +10,12 @@ zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/dotnet", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
 
+#aliases
+
+alias la="ls -al"
+alias ll="ls -l"
+alias ..="cd .."
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
