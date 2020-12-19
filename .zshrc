@@ -1,4 +1,7 @@
-export ZPLUG_HOME=/usr/local/opt/zplug
+#LINUX
+export ZPLUG_HOME=~/.zplug/
+#macOS
+#export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zstyle ':completion:*' menu select
@@ -21,7 +24,7 @@ alias ..="cd .."
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # fnm
-export PATH=/Users/szymonwanot/.fnm:$PATH
+export PATH=~/.fnm:$PATH
 eval "`fnm env --multi`"
 
 #git 
