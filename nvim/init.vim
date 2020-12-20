@@ -54,6 +54,8 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+set t_8f=\[[38;2;%lu;%lu;%lum
+set t_8b=\[[48;2;%lu;%lu;%lum
 set termguicolors
 
 set background=dark
@@ -65,8 +67,11 @@ set background=dark
 let g:sonokai_style = 'andromeda'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
-
 colorscheme sonokai
+
+" Transparent bg
+"hi! Normal guibg=NONE ctermbg=NONE
+"hi! NonText guibg=NONE ctermbg=NONE
 
 set cursorline
 set clipboard+=unnamedplus
