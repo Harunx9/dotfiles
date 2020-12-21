@@ -101,19 +101,19 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: "MesloLGS NF"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Regular
 
   italic:
-    family: "MesloLGS NF"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Italic
 
   bold:
-    family: "MesloLGS NF"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Bold
 
   bold_italic:
-    family: "MesloLGS NF"
+    family: "JetBrainsMono Nerd Font Mono"
     style: Bold Italic
 
   # Point size
