@@ -13,8 +13,9 @@ zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/dotnet", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
 
-#aliases
+zplug load --verbose
 
+#aliases
 alias la="ls -alG"
 alias ll="ls -lG"
 alias ls="ls -G"
@@ -25,7 +26,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # fnm
 export PATH=~/.fnm:$PATH
-eval "`fnm env --multi`"
+eval "`fnm env`"
 
 #git 
 export PATH=$PATH:/usr/local/bin
