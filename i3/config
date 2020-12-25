@@ -6,12 +6,6 @@ font pango:MesloLGS NF 12
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
-exec --no-startup-id ~/.config/polybar/run.sh
-
 #remap caps to escape
 exec setxkbmap pl -option caps:escape
 exec setxkbmap pl -option caps:escape
@@ -172,16 +166,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         i3bar_command ~/.config/polybar/run.sh
-     #   position  top
-     #   status_command i3status --config ~/.config/i3/i3status.conf
-     #   separator_symbol ""
-     #   colors {
-     #       background #2B2D3A
-     #       statusline #E1E3E4
-     #       focused_workspace #FB617E #FB617E #181A1C
-     #   }
 }
 
 exec --no-startup-id feh --bg-fill ~/.config/i3/jakub-rozalski-1920-winter-patrols.jpg
-exec --no-startup-id /usr/bin/blueman-applet 
-exec --no-startup-id ~/.config/autostart/jetbrains-toolbox.desktop
