@@ -102,19 +102,15 @@ font:
   # Normal (roman) font face
   normal:
     family: "JetBrainsMono Nerd Font Mono"
-    style: Regular
 
   italic:
     family: "JetBrainsMono Nerd Font Mono"
-    style: Italic
 
   bold:
     family: "JetBrainsMono Nerd Font Mono"
-    style: Bold
 
   bold_italic:
     family: "JetBrainsMono Nerd Font Mono"
-    style: Bold Italic
 
   # Point size
   size: 12.0
