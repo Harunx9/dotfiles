@@ -79,11 +79,36 @@ set splitright
 set splitbelow
 
 if exists('g:vscode')
+    function! s:openVSCodeCommandsInVisualMode()
+        normal! gv
+        let visualmode = visualmode()
+        if visualmode == "V"
+            let startLine = line("v")
+            let endLine = line(".")
+            call VSCodeNotifyRange("workbench.action.showCommands", startLine, endLine, 1)
+        else
+            let startPos = getpos("v")
+            let endPos = getpos(".")
+            call VSCodeNotifyRangePos("workbench.action.showCommands", startPos[1], endPos[1], startPos[2], endPos[2], 1)
+        endif
+    endfunction
+
     "NAVIGATION
     nnoremap <c-j> <Cmd>call VSCodeNotify('workbench.action.navigateDown')<Cr>
+    xnoremap <c-j> <Cmd>call VSCodeNotify('workbench.action.navigateDown')<Cr>
+
     nnoremap <c-k> <Cmd>call VSCodeNotify('workbench.action.navigateUp')<Cr>
+    xnoremap <c-k> <Cmd>call VSCodeNotify('workbench.action.navigateUp')<Cr>
+
     nnoremap <c-l> <Cmd>call VSCodeNotify('workbench.action.navigateRight')<Cr>
+    xnoremap <c-l> <Cmd>call VSCodeNotify('workbench.action.navigateRight')<Cr>
+
     nnoremap <c-h> <Cmd>call VSCodeNotify('workbench.action.navigateLeft')<Cr>
+    xnoremap <c-h> <Cmd>call VSCodeNotify('workbench.action.navigateLeft')<Cr>
+
+    xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
+
+    nmap <leader>ac  <Cmd> call VSCodeNotify('editor.action.quickFix')<Cr>
 endif
 
 if !exists('g:vscode')
@@ -105,7 +130,7 @@ if !exists('g:vscode')
     " Sonokai
     let g:sonokai_style = 'andromeda'
     let g:sonokai_enable_italic = 1
-    let g:sonokai_disable_italic_comment = 1
+    let g:sonokai_transparent_background = 1
     colorscheme sonokai
     
     noremap <leader><leader> :b#<CR>
