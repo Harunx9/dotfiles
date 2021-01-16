@@ -1,7 +1,7 @@
 #LINUX
-#export ZPLUG_HOME=~/.zplug/
+export ZPLUG_HOME=~/.zplug/
 #macOS
-export ZPLUG_HOME=/usr/local/opt/zplug
+#export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zstyle ':completion:*' menu select
@@ -35,3 +35,7 @@ export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:$HOME/.cargo/env
 
 eval "$(starship init zsh)"
+
+# fnm
+export PATH=/home/szymon/.fnm:$PATH
+eval "`fnm env`"

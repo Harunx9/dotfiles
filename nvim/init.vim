@@ -46,16 +46,11 @@ map <C-w> :bd<CR>
 map <leader>bn :bn<cr>
 map <leader>bp :bp<cr>
 map <leader>bd :bd<cr>
-" Disable Arrow keys in Escape mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-" Disable Arrow keys in Insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
 
 set cursorline
 set clipboard+=unnamedplus
@@ -130,7 +125,6 @@ if !exists('g:vscode')
     " Sonokai
     let g:sonokai_style = 'andromeda'
     let g:sonokai_enable_italic = 1
-    let g:sonokai_transparent_background = 1
     colorscheme sonokai
     
     noremap <leader><leader> :b#<CR>
