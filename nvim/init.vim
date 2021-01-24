@@ -52,21 +52,29 @@ noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
 
+set nohlsearch
+set smartindent
 set cursorline
 set clipboard+=unnamedplus
-set colorcolumn=100
+set colorcolumn=80
 set tabstop=4
-set softtabstop=0 
+set softtabstop=4 
 set shiftwidth=4
 set expandtab
 set number
 set laststatus=2
 set number
 set relativenumber 
-
+set hidden
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+set incsearch
 " NO SWAP FILE 
 set noswapfile
 set nobackup
+set nowritebackup
 set nowb
 set noshowmode
 
@@ -250,26 +258,6 @@ if !exists('g:vscode')
     "#####################################
     
     "############### COC #########################
-    " if hidden is not set, TextEdit might fail.
-    set hidden
-    
-    " " Some servers have issues with backup files, see #649
-    set nobackup
-    set nowritebackup
-    
-    " " Better display for messages
-    set cmdheight=2
-    
-    " " You will have bad experience for diagnostic messages when it's default
-    " 4000.
-    set updatetime=300
-    
-    " " don't give |ins-completion-menu| messages.
-    set shortmess+=c
-    
-    " " always show signcolumns
-    set signcolumn=yes
-    
     " use tab for trigger completion with characters ahead and navigate.
     " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
     inoremap <silent><expr> <TAB>
