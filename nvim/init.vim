@@ -74,6 +74,48 @@ set splitright
 set splitbelow
 
 if exists('g:vscode')
+    " THEME CHANGER
+
+    function! SetCursorLineNrColorInsert(mode)
+        " Insert mode: blue
+        if a:mode == "i"
+            call VSCodeNotify('nvim-theme.insert')
+    
+        " Replace mode: red
+        elseif a:mode == "r"
+            call VSCodeNotify('nvim-theme.replace')
+        endif
+    endfunction
+    
+    
+    function! SetCursorLineNrColorVisual()
+        set updatetime=0
+        call VSCodeNotify('nvim-theme.visual')
+    endfunction
+    
+    vnoremap <silent> <expr> <SID>SetCursorLineNrColorVisual SetCursorLineNrColorVisual()
+    nnoremap <silent> <script> v v<SID>SetCursorLineNrColorVisual
+    nnoremap <silent> <script> V V<SID>SetCursorLineNrColorVisual
+    nnoremap <silent> <script> <C-v> <C-v><SID>SetCursorLineNrColorVisual
+    
+    function! SetCursorLineNrColorVisual()
+        set updatetime=0
+        call VSCodeNotify('nvim-theme.visual')
+    endfunction
+    
+    vnoremap <silent> <expr> <SID>SetCursorLineNrColorVisual SetCursorLineNrColorVisual()
+    nnoremap <silent> <script> v v<SID>SetCursorLineNrColorVisual
+    nnoremap <silent> <script> V V<SID>SetCursorLineNrColorVisual
+    nnoremap <silent> <script> <C-v> <C-v><SID>SetCursorLineNrColorVisual
+    
+    
+    augroup CursorLineNrColorSwap
+        autocmd!
+        autocmd InsertEnter * call SetCursorLineNrColorInsert(v:insertmode)
+        autocmd InsertLeave * call VSCodeNotify('nvim-theme.normal')
+        autocmd CursorHold * call VSCodeNotify('nvim-theme.normal')
+    augroup END
+
     function! s:openVSCodeCommandsInVisualMode()
         normal! gv
         let visualmode = visualmode()
@@ -104,6 +146,9 @@ if exists('g:vscode')
     xnoremap <silent> <C-P> :<C-u>call <SID>openVSCodeCommandsInVisualMode()<CR>
 
     nmap <leader>ac  <Cmd> call VSCodeNotify('editor.action.quickFix')<Cr>
+    nmap <silent>[g <cmd> call VSCodeNotify('editor.action.marker.prev')<cr>
+    nmap <silent>]g <cmd> call VSCodeNotify('editor.action.marker.next')<cr>
+    nmap <leader>rn <cmd> call VSCodeNotify('editor.action.rename')<cr>
 endif
 
 if !exists('g:vscode')
@@ -123,7 +168,7 @@ if !exists('g:vscode')
     "let g:nord_italic_comments = 1
     
     " Sonokai
-    let g:sonokai_style = 'andromeda'
+    let g:sonokai_style = 'atlantis'
     let g:sonokai_enable_italic = 1
     colorscheme sonokai
     
@@ -137,7 +182,7 @@ if !exists('g:vscode')
           \ 'ctrl-s': 'split',
           \ 'ctrl-v': 'vsplit'
           \ }
-    let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+    let $FZF_DEFAULT_COMMAND = 'ag --hidden -g ""'
     let g:fzf_nvim_statusline = 0
     let g:fzf_layout = { 'window' : {'width' : 0.8, 'height':0.8 }}
     nnoremap <C-p> :Files<cr>

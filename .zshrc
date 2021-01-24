@@ -1,10 +1,12 @@
 #LINUX
-export ZPLUG_HOME=~/.zplug/
+#export ZPLUG_HOME=~/.zplug/
 #macOS
-#export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zstyle ':completion:*' menu select
+
+export PYTHON=python3
 
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/brew", from:oh-my-zsh

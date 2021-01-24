@@ -131,8 +131,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 #windos looks
 for_window [class="^.*"] border pixel 2
-gaps outer 10
-gaps inner 10
+gaps outer 5
+gaps inner 5
 client.focused #6DCAE8 #6DCAE8 #6DCAE8 #6DCAE8 
 client.unfocused #181A1C #181A1C #181A1C #181A1C
 client.placeholder #2B2D3A #2B2D3A #2B2D3A #2B2D3A
@@ -168,4 +168,4 @@ bar {
         i3bar_command ~/.config/polybar/run.sh
 }
 
-exec --no-startup-id feh --bg-fill ~/.config/i3/jakub-rozalski-1920-winter-patrols.jpg
+exec --no-startup-id feh --bg-fill ~/.config/i3/rust_abstract.png
