@@ -29,6 +29,8 @@ if !exists('g:vscode')
     Plug 'ryanoasis/vim-devicons'
     Plug 'arcticicestudio/nord-vim'
     Plug 'sainnhe/sonokai'
+    Plug 'ayu-theme/ayu-vim'
+    Plug 'Yggdroot/indentLine'
     call plug#end()
 endif
 "Common settings
@@ -139,6 +141,15 @@ if !exists('g:vscode')
     let g:sonokai_enable_italic = 1
     colorscheme sonokai
     
+    "AYU
+    "let ayucolor="mirage"
+    "colorscheme ayu
+    
+    let g:indentLine_char = ''
+    let g:indentLine_first_char = ''
+    let g:indentLine_showFirstIndentLevel = 1
+    let g:indentLine_setColors = 0
+
     noremap <leader><leader> :b#<CR>
     "####################################
     "Tagnbar
@@ -164,6 +175,7 @@ if !exists('g:vscode')
     
     " ############### AIRLINE ############
     let g:airline_theme='sonokai'
+    "let g:airline_theme='ayu'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#buffer_nr_show = 1
     let g:airline#extensions#tabline#show_splits = 1
