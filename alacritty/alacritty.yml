@@ -49,7 +49,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  # (only on macOS) decorations: buttonless
+  decorations: buttonless
 
   # Startup Mode (changes require restart)
   #
@@ -147,34 +147,30 @@ font:
   # If `true`, bold text is drawn using the bright color variants.
   #draw_bold_text_with_bright_colors: true
 
-
- 
 colors:
   primary:
-    background: "0x2b2d3a"
+    background: "0x2a2f38"
     foreground: "0xe1e3e4"
 
   normal:
     black: "0x181a1c"
-    red: "0xfb617e"
-    green: "0x9ed06c"
-    yellow: "0xedc763"
-    blue: "0x6dcae8"
-    magenta: "0xbb97ee"
-    cyan: "0xf89860"
+    red: "0xff6578"
+    green: "0x9dd274"
+    yellow: "0xeacb64"
+    blue: "0x72cce8"
+    magenta: "0xba9cf3"
+    cyan: "0xf69c5e"
     white: "0xe1e3e4"
 
   bright:
     black: "0x181a1c"
-    red: "0xfb617e"
-    green: "0x9ed06c"
-    yellow: "0xedc763"
-    blue: "0x6dcae8"
-    magenta: "0xbb97ee"
-    cyan: "0xf89860"
+    red: "0xff6578"
+    green: "0x9dd274"
+    yellow: "0xeacb64"
+    blue: "0x72cce8"
+    magenta: "0xba9cf3"
+    cyan: "0xf69c5e"
     white: "0xe1e3e4"
-  # Default colors
-
 # Visual Bell
 
 #
@@ -205,7 +201,7 @@ bell:
   # When set to `true`, selected text will be copied to the primary clipboard.
 save_to_clipboard: true
 
-background_opacity: 0.95
+#background_opacity: 0.95
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
 
