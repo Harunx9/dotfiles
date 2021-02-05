@@ -31,6 +31,7 @@ if !exists('g:vscode')
     Plug 'sainnhe/sonokai'
     Plug 'ayu-theme/ayu-vim'
     Plug 'Yggdroot/indentLine'
+    Plug 'rakr/vim-one'
     call plug#end()
 endif
 "Common settings
@@ -137,13 +138,17 @@ if !exists('g:vscode')
     "let g:nord_italic_comments = 1
     
     " Sonokai
-    let g:sonokai_style = 'atlantis'
-    let g:sonokai_enable_italic = 1
-    colorscheme sonokai
+    "let g:sonokai_style = 'atlantis'
+    "let g:sonokai_enable_italic = 1
+    "colorscheme sonokai
     
     "AYU
     "let ayucolor="mirage"
     "colorscheme ayu
+    
+    "ONE
+    colorscheme one
+    let g:one_allow_italics=1
     
     let g:indentLine_char = ''
     let g:indentLine_first_char = ''
@@ -174,7 +179,7 @@ if !exists('g:vscode')
     "###################################
     
     " ############### AIRLINE ############
-    let g:airline_theme='sonokai'
+    let g:airline_theme='one'
     "let g:airline_theme='ayu'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#buffer_nr_show = 1
