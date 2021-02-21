@@ -34,5 +34,14 @@
     "reference": "\uf87a",
     "typeParameter": "\uf278",
     "default": "\uf29c"
-  }
+  },
+  "cSpell.userWords": [
+    "RGBA",
+    "coord",
+    "gamepad",
+    "glsl",
+    "nalgebra",
+    "texel",
+    "xengine"
+  ]
 }
