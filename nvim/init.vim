@@ -158,8 +158,8 @@ if !exists('g:vscode')
     let g:gruvbox_improved_strings = 1
     
     "ONE
-    colorscheme one
-    let g:one_allow_italics=1
+    "colorscheme one
+    "let g:one_allow_italics=1
     
     let g:indentLine_char = ''
     let g:indentLine_first_char = ''
