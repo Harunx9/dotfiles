@@ -30,6 +30,7 @@ if !exists('g:vscode')
     Plug 'arcticicestudio/nord-vim'
     Plug 'sainnhe/sonokai'
     Plug 'ayu-theme/ayu-vim'
+    Plug 'gruvbox-community/gruvbox'
     Plug 'Yggdroot/indentLine'
     Plug 'rakr/vim-one'
     call plug#end()
@@ -44,11 +45,6 @@ filetype on
 let mapleader = ','
 "Save file
 map <leader>w :w<cr>
-"Buffer switch 
-map <C-w> :bd<CR>
-map <leader>bn :bn<cr>
-map <leader>bp :bp<cr>
-map <leader>bd :bd<cr>
 
 noremap <up> <nop>
 noremap <down> <nop>
@@ -119,9 +115,15 @@ if exists('g:vscode')
     nmap <silent>[g <cmd> call VSCodeNotify('editor.action.marker.prev')<cr>
     nmap <silent>]g <cmd> call VSCodeNotify('editor.action.marker.next')<cr>
     nmap <leader>rn <cmd> call VSCodeNotify('editor.action.rename')<cr>
+    map <C-w> :tabclose<CR>
 endif
 
 if !exists('g:vscode')
+    "Buffer switch 
+    map <C-w> :bd<CR>
+    map <leader>bn :bn<cr>
+    map <leader>bp :bp<cr>
+    map <leader>bd :bd<cr>
     "NAVIGATION 
     nnoremap <c-j> <c-w><c-j>
     nnoremap <c-k> <c-w><c-k>
@@ -145,6 +147,15 @@ if !exists('g:vscode')
     "AYU
     "let ayucolor="mirage"
     "colorscheme ayu
+
+    "GRuvbox
+    colorscheme gruvbox
+    let g:gruvbox_italic_term =1
+    let g:gruvbox_contrast_dark='medium'
+    let g:gruvbox_contrast_light='medium'
+    let g:gruvbox_invert_indent_guides = 1
+    let g:gruvbox_improved_warnings = 1
+    let g:gruvbox_improved_strings = 1
     
     "ONE
     colorscheme one
@@ -179,7 +190,7 @@ if !exists('g:vscode')
     "###################################
     
     " ############### AIRLINE ############
-    let g:airline_theme='one'
+    let g:airline_theme='gruvbox'
     "let g:airline_theme='ayu'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#buffer_nr_show = 1
