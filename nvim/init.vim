@@ -31,6 +31,7 @@ if !exists('g:vscode')
     Plug 'sainnhe/sonokai'
     Plug 'ayu-theme/ayu-vim'
     Plug 'gruvbox-community/gruvbox'
+    Plug 'sainnhe/gruvbox-material'
     Plug 'Yggdroot/indentLine'
     Plug 'rakr/vim-one'
     call plug#end()
@@ -149,13 +150,17 @@ if !exists('g:vscode')
     "colorscheme ayu
 
     "GRuvbox
-    colorscheme gruvbox
-    let g:gruvbox_italic_term =1
-    let g:gruvbox_contrast_dark='medium'
-    let g:gruvbox_contrast_light='medium'
-    let g:gruvbox_invert_indent_guides = 1
-    let g:gruvbox_improved_warnings = 1
-    let g:gruvbox_improved_strings = 1
+    "colorscheme gruvbox
+    "let g:gruvbox_italic_term =1
+    "let g:gruvbox_contrast_dark='medium'
+    "let g:gruvbox_contrast_light='medium'
+    "let g:gruvbox_invert_indent_guides = 1
+    "let g:gruvbox_improved_warnings = 1
+    "let g:gruvbox_improved_strings = 1
+
+    "Gruvbox material
+    let g:gruvbox_material_enable_italic = 1
+    colorscheme gruvbox-material
     
     "ONE
     "colorscheme one
@@ -190,7 +195,7 @@ if !exists('g:vscode')
     "###################################
     
     " ############### AIRLINE ############
-    let g:airline_theme='gruvbox'
+    let g:airline_theme='gruvbox_material'
     "let g:airline_theme='ayu'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#buffer_nr_show = 1
