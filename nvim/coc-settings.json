@@ -37,11 +37,15 @@
   },
   "cSpell.userWords": [
     "RGBA",
+    "Tileset",
     "coord",
     "gamepad",
     "glsl",
     "nalgebra",
+    "rects",
     "texel",
+    "tilesets",
+    "unpositioned",
     "xengine"
   ]
 }
