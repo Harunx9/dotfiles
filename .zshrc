@@ -7,6 +7,8 @@ source $ZPLUG_HOME/init.zsh
 zstyle ':completion:*' menu select
 
 export PYTHON=python3
+export GDK_SCALE=1
+export GDK_DPI_SCALE=0.5
 
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/brew", from:oh-my-zsh
@@ -35,9 +37,14 @@ export PATH=$PATH:/usr/local/bin
 
 #cargo
 export PATH=$PATH:$HOME/.cargo/env
+export PATH=$PATH:$HOME/.cargo/bin
 
 eval "$(starship init zsh)"
 
 # fnm
 export PATH=/home/szymon/.fnm:$PATH
+eval "`fnm env`"
+
+# fnm
+export PATH=/home/harunx9/.fnm:$PATH
 eval "`fnm env`"

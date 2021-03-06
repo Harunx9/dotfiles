@@ -1,0 +1,7 @@
+#if SCREEN_NUM == 0
+Xft.dpi: 120
+#endif
+
+#if SCREEN_NUM == 0
+Xft.dpi: 96
+#endif
