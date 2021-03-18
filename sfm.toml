@@ -1,8 +1,9 @@
 #Example configuration
 #Core configuration
 [core]
-tick_rate = 240
+tick_rate =240 
 use_icons = true
+list_arrow = "=>"
 
 [color_scheme]
 foregorund = "White"
@@ -71,6 +72,8 @@ py = ""
 rb = ""
 java = ""
 lock = ""
+symlink = ""
+warn = ""
 default = ""
 
 [file_associated_programs]

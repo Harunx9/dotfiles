@@ -10,12 +10,7 @@ export PYTHON=python3
 export GDK_SCALE=1
 export GDK_DPI_SCALE=0.5
 
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/brew", from:oh-my-zsh
-zplug "plugins/cargo", from:oh-my-zsh
-zplug "plugins/docker", from:oh-my-zsh
-zplug "plugins/dotnet", from:oh-my-zsh
-zplug "plugins/osx", from:oh-my-zsh
+zplug "marlonrichert/zsh-autocomplete"
 
 zplug load --verbose
 
@@ -28,6 +23,7 @@ alias ..="cd .."
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH=/usr/share/dotnet:$PATH
 # fnm
 export PATH=~/.fnm:$PATH
 eval "`fnm env`"

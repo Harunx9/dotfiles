@@ -13,6 +13,9 @@ scripts = {
 }
 
 keys = [
+    # Change screen focus
+    Key([mod], "a", lazy.to_screen(0), desc="Focus primary screen"),
+    Key([mod], "s", lazy.to_screen(1), desc="Focus secondary screen"),
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -63,7 +66,8 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod, "shift"], "Tab", lazy.next_layout(),
+        desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
 
     Key([mod, "control"], "Tab", lazy.window.toggle_floating(),
@@ -71,10 +75,13 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.spawn(
-        "light-locker-command -l"), desc="Shutdown Qtile"),
+        "light-locker-command -l")),
 
+    Key([mod], "Tab", lazy.spawn("rofi -show window"),
+        desc="Switch programs from ROFI"),
     Key([mod, "control"], "Escape", lazy.shutdown(), desc="Lock screen"),
-    Key([mod], "space", lazy.spawn("rofi -show drun")),
+    Key([mod], "space", lazy.spawn("rofi -show drun"),
+        desc="Run programs from ROFI"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -95,7 +102,7 @@ for i in groups:
     ])
 
 gruvbox_colors = dict(
-    bg0='#262727',
+    bg0='#3c3836',
     bg="#282828",
     fg="#d4be98",
     red="#ea6992",
@@ -108,11 +115,13 @@ gruvbox_colors = dict(
 
 layouts = [
     layout.MonadTall(
-        border_focus=gruvbox_colors["red"], border_normal=gruvbox_colors["bg0"]),
-    layout.Max(),
+        border_focus=gruvbox_colors["red"], border_normal=gruvbox_colors["bg0"], margin=15),
+    layout.Max(margin=15),
     layout.Columns(
+        margin=15,
         border_focus=gruvbox_colors["red"],  border_normal=gruvbox_colors["bg0"]),
     layout.Tile(
+        margin=15,
         border_focus=gruvbox_colors["red"],  border_normal=gruvbox_colors["bg0"]),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -247,6 +256,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
+    Match(title="Game"),
 ], border_focus=gruvbox_colors["blue"])
 auto_fullscreen = True
 focus_on_window_activation = "smart"

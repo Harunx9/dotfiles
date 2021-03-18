@@ -38,7 +38,7 @@ window:
     y: 1
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: false
 
   # Window decorations
   #
@@ -63,8 +63,9 @@ window:
   startup_mode: Windowed
 
   # Window title
-  title: Happy hacking
-
+  #title: Happy hacking
+  
+  dynamic_title: true
   # Window class (Linux/BSD only):
   #class:
   # Application instance name
