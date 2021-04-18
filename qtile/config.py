@@ -123,10 +123,10 @@ layouts = [
     layout.Tile(
         margin=15,
         border_focus=gruvbox_colors["red"],  border_normal=gruvbox_colors["bg0"]),
+    layout.Stack(num_stacks=2),
+    layout.Matrix(),
     # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
     # layout.Bsp(),
-    # layout.Matrix(),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.TreeTab(),
@@ -269,10 +269,11 @@ focus_on_window_activation = "smart"
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "Qtile"
+wmname = "LG3D"
 
 
 @ hook.subscribe.startup_once
 def autostart():
     subprocess.call([scripts["autostart"]])
+    subprocess.Popen("redshift")
     subprocess.Popen("light-locker")

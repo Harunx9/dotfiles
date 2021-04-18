@@ -9,7 +9,6 @@ zstyle ':completion:*' menu select
 export PYTHON=python3
 export GDK_SCALE=1
 export GDK_DPI_SCALE=0.5
-
 zplug "marlonrichert/zsh-autocomplete"
 
 zplug load --verbose

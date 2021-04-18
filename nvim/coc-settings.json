@@ -39,16 +39,23 @@
         "default": "\uf29c"
     },
     "cSpell.userWords": [
-        "RGBA",
-        "Tileset",
-        "coord",
-        "gamepad",
-        "glsl",
-        "nalgebra",
-        "rects",
-        "texel",
-        "tilesets",
-        "unpositioned",
-        "xengine"
+      "Bgra",
+      "RGBA",
+      "Tileset",
+      "Zeroable",
+      "bytemuck",
+      "coord",
+      "gamepad",
+      "glsl",
+      "nalgebra",
+      "rects",
+      "shaderc",
+      "texel",
+      "tilesets",
+      "unpositioned",
+      "wgpu",
+      "wgsl",
+      "winit",
+      "xengine"
     ]
 }
