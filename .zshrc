@@ -6,6 +6,12 @@ source $ZPLUG_HOME/init.zsh
 
 zstyle ':completion:*' menu select
 
+export VSCODE_GALLERY_SERVICE_URL='https://marketplace.visualstudio.com/_apis/public/gallery'
+export VSCODE_GALLERY_CACHE_URL='https://vscode.blob.core.windows.net/gallery/index'
+export VSCODE_GALLERY_ITEM_URL='https://marketplace.visualstudio.com/items'
+export VSCODE_GALLERY_CONTROL_URL=''
+export VSCODE_GALLERY_RECOMMENDATIONS_URL=''
+
 export PYTHON=python3
 export GDK_SCALE=1
 export GDK_DPI_SCALE=0.5
