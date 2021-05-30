@@ -41,6 +41,7 @@
     "cSpell.userWords": [
       "Bgra",
       "RGBA",
+      "Storei",
       "Tileset",
       "Zeroable",
       "bytemuck",
@@ -49,6 +50,7 @@
       "glsl",
       "nalgebra",
       "rects",
+      "rusttype",
       "shaderc",
       "texel",
       "tilesets",
