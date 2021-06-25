@@ -5,7 +5,7 @@ from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
-mod = "mod1"
+mod = "mod4"
 terminal = "alacritty"
 scripts = {
     "autostart": path.expanduser("~/.config/qtile/scripts/autostart.sh"),
@@ -255,6 +255,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
     Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(wm_class="steam_app_*"),
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
     Match(title="Game"),
