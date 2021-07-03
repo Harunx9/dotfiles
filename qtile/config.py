@@ -185,6 +185,7 @@ screens = [
                 widget.Sep(foreground=gruvbox_colors["fg"]),
                 widget.CurrentLayoutIcon(
                     foreground=gruvbox_colors["fg"], scale=0.8),
+                widget.CurrentLayout(foreground=gruvbox_colors["fg"]),
                 widget.Sep(foreground=gruvbox_colors["fg"]),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p',
                              foreground=gruvbox_colors["fg"], fontsize=hidpi_monitor_settngs["fontsize"]),
@@ -192,7 +193,8 @@ screens = [
                 widget.Systray(),
             ],
             35,
-            background=gruvbox_colors["bg0"]
+            background=gruvbox_colors["bg0"],
+            margin=[8, 8, 8, 8]
         ),
     ),
     Screen(
@@ -229,12 +231,14 @@ screens = [
                 widget.Sep(foreground=gruvbox_colors["fg"]),
                 widget.CurrentLayoutIcon(
                     foreground=gruvbox_colors["fg"], scale=0.8),
+                widget.CurrentLayout(foreground=gruvbox_colors["fg"]),
                 widget.Sep(foreground=gruvbox_colors["fg"]),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p',
                              foreground=gruvbox_colors["fg"], fontsize=hidpi_monitor_settngs["fontsize"]),
             ],
             30,
-            background=gruvbox_colors["bg0"]
+            background=gruvbox_colors["bg0"],
+            margin=[4, 4, 4, 4]
         ),
     )
 ]
