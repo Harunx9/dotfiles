@@ -120,17 +120,30 @@ gruvbox_colors = dict(
 )
 
 layouts = [
-    layout.MonadTall(
-        border_focus=gruvbox_colors["red"], border_normal=gruvbox_colors["bg0"], margin=15),
-    layout.Max(margin=15),
     layout.Columns(
         margin=15,
-        border_focus=gruvbox_colors["red"],  border_normal=gruvbox_colors["bg0"]),
+        border_focus=gruvbox_colors["red"],
+        border_normal=gruvbox_colors["bg0"]),
+    layout.TreeTab(
+        font='JetBrainsMono Nerd Font Mono',
+        active_bg=gruvbox_colors["red"],
+        active_fg=gruvbox_colors["bg"],
+        urgent_bg=gruvbox_colors["yellow"],
+        urgent_fg=gruvbox_colors["bg"],
+        inactive_bg=gruvbox_colors["blue"],
+        inactive_fg=gruvbox_colors["bg"],
+        bg_color=gruvbox_colors["bg0"],
+        section_fg=gruvbox_colors["fg"],
+        sections=["Tabs"]
+    ),
+    layout.MonadTall(
+        border_focus=gruvbox_colors["red"],
+        border_normal=gruvbox_colors["bg0"],
+        margin=15),
     layout.Tile(
         margin=15,
-        border_focus=gruvbox_colors["red"],  border_normal=gruvbox_colors["bg0"]),
-    layout.Stack(num_stacks=2),
-    layout.Matrix(),
+        border_focus=gruvbox_colors["red"],
+        border_normal=gruvbox_colors["bg0"]),
     # Try more layouts by unleashing below layouts.
     # layout.Bsp(),
     # layout.MonadWide(),
@@ -200,6 +213,12 @@ screens = [
                     foreground=gruvbox_colors["bg"],
                     background=gruvbox_colors["blue"],
                     fontsize=hidpi_monitor_settngs["fontsize"]),
+                widget.Net(
+                    foreground=gruvbox_colors["bg"],
+                    background=gruvbox_colors["yellow"],
+                    format="{down} ↓↑ {up}",
+                    fontsize=hidpi_monitor_settngs["fontsize"],
+                ),
                 widget.ThermalSensor(
                     fmt=" {}",
                     show_tag=False,
@@ -212,16 +231,16 @@ screens = [
                     type="line",
                     samples=16,
                     border_color=gruvbox_colors["bg"],
-                    graph_color=gruvbox_colors["orange"],
-                    background=gruvbox_colors["blue"],
+                    graph_color=gruvbox_colors["bg_blue"],
+                    background=gruvbox_colors["orange"],
                     foreground=gruvbox_colors["bg"]
                 ),
                 widget.MemoryGraph(
                     type="line",
                     samples=16,
                     border_color=gruvbox_colors["bg"],
-                    graph_color=gruvbox_colors["orange"],
-                    background=gruvbox_colors["blue"],
+                    graph_color=gruvbox_colors["bg_blue"],
+                    background=gruvbox_colors["orange"],
                     foreground=gruvbox_colors["bg"]
                 ),
                 widget.CurrentLayoutIcon(
@@ -290,6 +309,11 @@ screens = [
                     foreground=gruvbox_colors["bg"],
                     background=gruvbox_colors["blue"],
                     fontsize=widget_defaults["fontsize"]),
+                widget.Net(
+                    foreground=gruvbox_colors["bg"],
+                    background=gruvbox_colors["yellow"],
+                    format="{down} ↓↑ {up}",
+                ),
                 widget.ThermalSensor(
                     fmt=" {}",
                     show_tag=False,
@@ -302,16 +326,16 @@ screens = [
                     type="line",
                     samples=16,
                     border_color=gruvbox_colors["bg"],
-                    graph_color=gruvbox_colors["orange"],
-                    background=gruvbox_colors["blue"],
+                    graph_color=gruvbox_colors["bg_blue"],
+                    background=gruvbox_colors["orange"],
                     foreground=gruvbox_colors["bg"]
                 ),
                 widget.MemoryGraph(
                     type="line",
                     samples=16,
                     border_color=gruvbox_colors["bg"],
-                    graph_color=gruvbox_colors["orange"],
-                    background=gruvbox_colors["blue"],
+                    graph_color=gruvbox_colors["bg_blue"],
+                    background=gruvbox_colors["orange"],
                     foreground=gruvbox_colors["bg"]
                 ),
                 widget.CurrentLayoutIcon(
