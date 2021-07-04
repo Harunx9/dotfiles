@@ -111,7 +111,12 @@ gruvbox_colors = dict(
     blue='#7daea3',
     yellow='#d8a657',
     orange="#e78a4e",
-    aqua='#89b482'
+    aqua='#89b482',
+    purple='#d3869b',
+    bg_red='#3c1f1e',
+    bg_green='#32361a',
+    bg_blue='#2e3b3b',
+    bg_yellow='#473c29'
 )
 
 layouts = [
@@ -151,12 +156,35 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.TextBox("", fontsize=38,
-                               foreground=gruvbox_colors["fg"]),
+                widget.TextBox(
+                    "",
+                    fontsize=38,
+                    foreground=gruvbox_colors["bg"],
+                    background=gruvbox_colors["orange"]
+                ),
                 widget.GroupBox(
-                    foreground=gruvbox_colors["fg"], this_current_screen_border=gruvbox_colors["blue"], fontsize=hidpi_monitor_settngs["fontsize"]),
+                    urgent_border=gruvbox_colors["red"],
+                    active=gruvbox_colors["bg_blue"],
+                    foreground=gruvbox_colors["bg"],
+                    this_current_screen_border=gruvbox_colors["blue"],
+                    background=gruvbox_colors["yellow"],
+                    other_screen_border=gruvbox_colors["purple"],
+                    this_screen_border=gruvbox_colors["purple"],
+                    other_current_screen_border=gruvbox_colors["blue"],
+                    fontsize=hidpi_monitor_settngs["fontsize"]),
+                widget.TextBox(
+                    "",
+                    fontsize=38,
+                    foreground=gruvbox_colors["orange"],
+                ),
                 widget.WindowName(
-                    foreground=gruvbox_colors["fg"], fontsize=hidpi_monitor_settngs["fontsize"]),
+                    foreground=gruvbox_colors["fg"],
+                    fontsize=hidpi_monitor_settngs["fontsize"]),
+                widget.TextBox(
+                    "",
+                    fontsize=38,
+                    foreground=gruvbox_colors["orange"],
+                ),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
@@ -164,33 +192,54 @@ screens = [
                     name_transform=lambda name: name.upper(),
                     fontsize=hidpi_monitor_settngs["fontsize"]
                 ),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
                 widget.TextBox('', fontsize=34,
-                               foreground=gruvbox_colors["fg"]),
+                               foreground=gruvbox_colors["bg"],
+                               background=gruvbox_colors["blue"],
+                               ),
                 widget.Volume(
-                    foreground=gruvbox_colors["fg"], fontsize=hidpi_monitor_settngs["fontsize"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
+                    foreground=gruvbox_colors["bg"],
+                    background=gruvbox_colors["blue"],
+                    fontsize=hidpi_monitor_settngs["fontsize"]),
                 widget.ThermalSensor(
-                    show_tag=True, foreground=gruvbox_colors["fg"], fontsize=hidpi_monitor_settngs["fontsize"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
-                widget.CPUGraph(core="all", type="line", samples=16,
-                                border_color=gruvbox_colors["green"],
-                                graph_color=gruvbox_colors["red"],
-                                foreground=gruvbox_colors["fg"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
-                widget.MemoryGraph(type="line", samples=16,
-                                   border_color=gruvbox_colors["green"],
-                                   graph_color=gruvbox_colors["red"],
-                                   foreground=gruvbox_colors["fg"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
+                    fmt=" {}",
+                    show_tag=False,
+                    foreground=gruvbox_colors["bg"],
+                    background=gruvbox_colors["red"],
+                    fontsize=hidpi_monitor_settngs["fontsize"],
+                ),
+                widget.CPUGraph(
+                    core="all",
+                    type="line",
+                    samples=16,
+                    border_color=gruvbox_colors["bg"],
+                    graph_color=gruvbox_colors["orange"],
+                    background=gruvbox_colors["blue"],
+                    foreground=gruvbox_colors["bg"]
+                ),
+                widget.MemoryGraph(
+                    type="line",
+                    samples=16,
+                    border_color=gruvbox_colors["bg"],
+                    graph_color=gruvbox_colors["orange"],
+                    background=gruvbox_colors["blue"],
+                    foreground=gruvbox_colors["bg"]
+                ),
                 widget.CurrentLayoutIcon(
-                    foreground=gruvbox_colors["fg"], scale=0.8),
-                widget.CurrentLayout(foreground=gruvbox_colors["fg"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p',
-                             foreground=gruvbox_colors["fg"], fontsize=hidpi_monitor_settngs["fontsize"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
-                widget.Systray(),
+                    background=gruvbox_colors["green"],
+                    foreground=gruvbox_colors["bg"],
+                    scale=0.8),
+                widget.CurrentLayout(
+                    background=gruvbox_colors["green"],
+                    foreground=gruvbox_colors["bg"],
+                ),
+                widget.Clock(
+                    format=' %Y-%m-%d %I:%M %p',
+                    background=gruvbox_colors["aqua"],
+                    foreground=gruvbox_colors["bg"],
+                    fontsize=hidpi_monitor_settngs["fontsize"]),
+                widget.Systray(
+                    background=gruvbox_colors["yellow"],
+                ),
             ],
             35,
             background=gruvbox_colors["bg0"],
@@ -200,41 +249,84 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.TextBox("", fontsize=28,
-                               foreground=gruvbox_colors["fg"]),
+                widget.TextBox(
+                    "",
+                    fontsize=28,
+                    foreground=gruvbox_colors["bg"],
+                    background=gruvbox_colors["orange"]
+                ),
                 widget.GroupBox(
-                    foreground=gruvbox_colors["fg"], this_current_screen_border=gruvbox_colors["blue"]),
+                    urgent_border=gruvbox_colors["red"],
+                    active=gruvbox_colors["bg_blue"],
+                    foreground=gruvbox_colors["bg"],
+                    this_current_screen_border=gruvbox_colors["blue"],
+                    background=gruvbox_colors["yellow"],
+                    other_screen_border=gruvbox_colors["purple"],
+                    this_screen_border=gruvbox_colors["purple"],
+                    other_current_screen_border=gruvbox_colors["blue"],
+                ),
+                widget.TextBox(
+                    "",
+                    fontsize=28,
+                    foreground=gruvbox_colors["orange"],
+                ),
                 widget.WindowName(foreground=gruvbox_colors["fg"]),
+                widget.TextBox(
+                    "",
+                    fontsize=28,
+                    foreground=gruvbox_colors["orange"],
+                ),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
-                widget.TextBox('', fontsize=26,
-                               foreground=gruvbox_colors["fg"]),
-                widget.Volume(foreground=gruvbox_colors["fg"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
+                widget.TextBox('', fontsize=28,
+                               foreground=gruvbox_colors["bg"],
+                               background=gruvbox_colors["blue"],
+                               ),
+                widget.Volume(
+                    foreground=gruvbox_colors["bg"],
+                    background=gruvbox_colors["blue"],
+                    fontsize=widget_defaults["fontsize"]),
                 widget.ThermalSensor(
-                    show_tag=True, foreground=gruvbox_colors["fg"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
-                widget.CPUGraph(core="all", type="line", samples=16,
-                                border_color=gruvbox_colors["green"],
-                                graph_color=gruvbox_colors["red"],
-                                foreground=gruvbox_colors["fg"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
-                widget.MemoryGraph(type="line", samples=16,
-                                   border_color=gruvbox_colors["green"],
-                                   graph_color=gruvbox_colors["red"],
-                                   foreground=gruvbox_colors["fg"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
+                    fmt=" {}",
+                    show_tag=False,
+                    foreground=gruvbox_colors["bg"],
+                    background=gruvbox_colors["red"],
+                    fontsize=widget_defaults["fontsize"],
+                ),
+                widget.CPUGraph(
+                    core="all",
+                    type="line",
+                    samples=16,
+                    border_color=gruvbox_colors["bg"],
+                    graph_color=gruvbox_colors["orange"],
+                    background=gruvbox_colors["blue"],
+                    foreground=gruvbox_colors["bg"]
+                ),
+                widget.MemoryGraph(
+                    type="line",
+                    samples=16,
+                    border_color=gruvbox_colors["bg"],
+                    graph_color=gruvbox_colors["orange"],
+                    background=gruvbox_colors["blue"],
+                    foreground=gruvbox_colors["bg"]
+                ),
                 widget.CurrentLayoutIcon(
-                    foreground=gruvbox_colors["fg"], scale=0.8),
-                widget.CurrentLayout(foreground=gruvbox_colors["fg"]),
-                widget.Sep(foreground=gruvbox_colors["fg"]),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p',
-                             foreground=gruvbox_colors["fg"], fontsize=hidpi_monitor_settngs["fontsize"]),
+                    background=gruvbox_colors["green"],
+                    foreground=gruvbox_colors["bg"],
+                    scale=0.8),
+                widget.CurrentLayout(
+                    background=gruvbox_colors["green"],
+                    foreground=gruvbox_colors["bg"],
+                ),
+                widget.Clock(
+                    format=' %Y-%m-%d %I:%M %p',
+                    background=gruvbox_colors["aqua"],
+                    foreground=gruvbox_colors["bg"],
+                    fontsize=widget_defaults["fontsize"]),
             ],
             30,
             background=gruvbox_colors["bg0"],
