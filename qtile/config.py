@@ -228,7 +228,6 @@ screens = [
                 ),
                 widget.CPUGraph(
                     core="all",
-                    type="line",
                     samples=16,
                     border_color=gruvbox_colors["bg"],
                     graph_color=gruvbox_colors["bg_blue"],
@@ -236,7 +235,6 @@ screens = [
                     foreground=gruvbox_colors["bg"]
                 ),
                 widget.MemoryGraph(
-                    type="line",
                     samples=16,
                     border_color=gruvbox_colors["bg"],
                     graph_color=gruvbox_colors["bg_blue"],
@@ -323,7 +321,6 @@ screens = [
                 ),
                 widget.CPUGraph(
                     core="all",
-                    type="line",
                     samples=16,
                     border_color=gruvbox_colors["bg"],
                     graph_color=gruvbox_colors["bg_blue"],
@@ -331,7 +328,6 @@ screens = [
                     foreground=gruvbox_colors["bg"]
                 ),
                 widget.MemoryGraph(
-                    type="line",
                     samples=16,
                     border_color=gruvbox_colors["bg"],
                     graph_color=gruvbox_colors["bg_blue"],
