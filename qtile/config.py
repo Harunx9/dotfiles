@@ -85,7 +85,7 @@ keys = [
         desc="Run programs from ROFI"),
 ]
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in "1234567890"]
 
 for i in groups:
     keys.extend([
@@ -121,7 +121,7 @@ gruvbox_colors = dict(
 
 layouts = [
     layout.Columns(
-        margin=15,
+        margin=5,
         border_focus=gruvbox_colors["red"],
         border_normal=gruvbox_colors["bg0"]),
     layout.TreeTab(
@@ -139,9 +139,9 @@ layouts = [
     layout.MonadTall(
         border_focus=gruvbox_colors["red"],
         border_normal=gruvbox_colors["bg0"],
-        margin=15),
+        margin=5),
     layout.Tile(
-        margin=15,
+        margin=5,
         border_focus=gruvbox_colors["red"],
         border_normal=gruvbox_colors["bg0"]),
     # Try more layouts by unleashing below layouts.
@@ -205,6 +205,16 @@ screens = [
                     name_transform=lambda name: name.upper(),
                     fontsize=hidpi_monitor_settngs["fontsize"]
                 ),
+                widget.Pomodoro(
+                    background=gruvbox_colors["aqua"],
+                    color_active=gruvbox_colors["bg"],
+                    color_break=gruvbox_colors["bg"],
+                    color_inactive=gruvbox_colors["bg0"],
+                    foreground=gruvbox_colors["bg"],
+                    length_pomodori=25,
+                    length_short_break=5,
+                    length_long_break=15,
+                ),
                 widget.TextBox('', fontsize=34,
                                foreground=gruvbox_colors["bg"],
                                background=gruvbox_colors["blue"],
@@ -228,14 +238,14 @@ screens = [
                 ),
                 widget.CPUGraph(
                     core="all",
-                    samples=16,
+                    samples=100,
                     border_color=gruvbox_colors["bg"],
                     graph_color=gruvbox_colors["bg_blue"],
                     background=gruvbox_colors["orange"],
                     foreground=gruvbox_colors["bg"]
                 ),
                 widget.MemoryGraph(
-                    samples=16,
+                    samples=100,
                     border_color=gruvbox_colors["bg"],
                     graph_color=gruvbox_colors["bg_blue"],
                     background=gruvbox_colors["orange"],
@@ -321,14 +331,14 @@ screens = [
                 ),
                 widget.CPUGraph(
                     core="all",
-                    samples=16,
+                    samples=100,
                     border_color=gruvbox_colors["bg"],
                     graph_color=gruvbox_colors["bg_blue"],
                     background=gruvbox_colors["orange"],
                     foreground=gruvbox_colors["bg"]
                 ),
                 widget.MemoryGraph(
-                    samples=16,
+                    samples=100,
                     border_color=gruvbox_colors["bg"],
                     graph_color=gruvbox_colors["bg_blue"],
                     background=gruvbox_colors["orange"],

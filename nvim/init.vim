@@ -77,6 +77,7 @@ set nobackup
 set nowritebackup
 set nowb
 set noshowmode
+set guifont=JetBrainsMono\ Nerd\ Font\ Mono:24
 
 set splitright
 set splitbelow
@@ -191,17 +192,18 @@ if !exists('g:vscode')
     "colorscheme ayu
 
     "GRuvbox
-    colorscheme gruvbox
-    let g:gruvbox_italic_term =1
-    let g:gruvbox_contrast_dark='hard'
-    let g:gruvbox_contrast_light='hard'
-    let g:gruvbox_invert_indent_guides = 1
-    let g:gruvbox_improved_warnings = 1
-    let g:gruvbox_improved_strings = 1
+    "colorscheme gruvbox
+    "let g:gruvbox_italic_term =1
+    "let g:gruvbox_contrast_dark='hard'
+    "let g:gruvbox_contrast_light='hard'
+    "let g:gruvbox_invert_indent_guides = 1
+    "let g:gruvbox_improved_warnings = 1
+    "let g:gruvbox_improved_strings = 1
 
     "Gruvbox material
-    "let g:gruvbox_material_enable_italic = 1
-    "colorscheme gruvbox-material
+    let g:gruvbox_material_background = 'hard'
+    let g:gruvbox_material_enable_italic = 1
+    colorscheme gruvbox-material
     
     "ONE
     "colorscheme one
@@ -226,7 +228,7 @@ if !exists('g:vscode')
     let g:fzf_nvim_statusline = 0
     let g:fzf_layout = { 'window' : {'width' : 0.8, 'height':0.8 }}
     nnoremap <C-p> :Files<cr>
-    nnoremap <space>z :Buffers<CR>
+    nnoremap <space>b :Buffers<CR>
     augroup fzf
       autocmd!
       autocmd! FileType fzf
@@ -236,7 +238,7 @@ if !exists('g:vscode')
     "###################################
     
     " ############### AIRLINE ############
-    let g:airline_theme='gruvbox'
+    let g:airline_theme='gruvbox_material'
     "let g:airline_theme='ayu'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#buffer_nr_show = 1

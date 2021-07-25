@@ -9,6 +9,13 @@
     "rust-analyzer.checkOnSave.enable": true,
     "explorer.icon.enableNerdfont": true,
     "explorer.file.showHiddenFiles": true,
+    "explorer.root.strategies": [
+        "workspace",
+        "cwd",
+        "sourceBuffer",
+        "reveal"
+    ],
+    "explorer.quitOnOpen": true,
     "diagnostic.virtualText": true,
     "codeLens.enable": true,
     "suggest.completionItemKindLabels": {
@@ -48,6 +55,7 @@
       "Zeroable",
       "bytemuck",
       "coord",
+      "deserialization",
       "gamepad",
       "glsl",
       "nalgebra",

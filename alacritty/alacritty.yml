@@ -447,7 +447,7 @@ schemes:
       cyan:    '#427b58'
       white:   '#928374'
 # Apply the color scheme.
-colors: *gruvbox_dark_medium
+colors: *gruvbox_material_hard_dark
 # Visual Bell
 
 #
@@ -478,7 +478,7 @@ bell:
   # When set to `true`, selected text will be copied to the primary clipboard.
 save_to_clipboard: true
 
-background_opacity: 0.95
+background_opacity: 1.0
 # Allow terminal applications to change Alacritty's window title.
 dynamic_title: true
 
