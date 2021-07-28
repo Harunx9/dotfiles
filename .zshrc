@@ -1,7 +1,7 @@
 #LINUX
-export ZPLUG_HOME=~/.zplug/
+#export ZPLUG_HOME=~/.zplug/
 #macOS
-#export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zstyle ':completion:*' menu select
@@ -20,6 +20,7 @@ zplug "marlonrichert/zsh-autocomplete"
 zplug load --verbose
 
 #aliases
+alias ls="lsd"
 alias la="ls -alG"
 alias ll="ls -lG"
 alias ls="ls -G"
