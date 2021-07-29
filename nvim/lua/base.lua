@@ -26,3 +26,11 @@ options.splitbelow = true
 options.expandtab = true
 options.guifont = "JetBrainsMono Nerd Font Mono:24"
 options.completeopt = "menuone,noselect"
+options.termguicolors = true
+
+vim.api.nvim_exec([[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.js,*.rs,*.lua FormatWrite
+augroup END
+]], true)

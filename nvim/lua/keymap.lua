@@ -16,3 +16,5 @@ map('n', '<leader>n', ':NvimTreeFindFile<CR>', { noremap = true })
 
 map('n', '<C-p>', '<cmd>lua require(\'telescope.builtin\').find_files()<cr>', { noremap = true })
 map('n', '<space>b', '<cmd>lua require(\'telescope.builtin\').buffers()<cr>', { noremap = true })
+map('n', '<space>s', '<cmd>lua require(\'telescope.builtin\').lsp_workspace_symbols()<cr>', { noremap = true })
+map('n', '<space>d', '<cmd>lua require(\'telescope.builtin\').lsp_workspace_diagnostics()<cr>', { noremap = true })
