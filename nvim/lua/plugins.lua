@@ -1,5 +1,5 @@
 return require("packer").startup(function()
-    use({"TimUntersberger/neogit"})
+	use({ "TimUntersberger/neogit" })
 	use("wbthomason/packer.nvim")
 	use("eddyekofo94/gruvbox-flat.nvim")
 	use("kyazdani42/nvim-tree.lua")
@@ -39,5 +39,5 @@ return require("packer").startup(function()
 		end,
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
-    use({"wakatime/vim-wakatime"})
+	use({ "wakatime/vim-wakatime" })
 end)
