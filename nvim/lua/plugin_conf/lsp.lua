@@ -39,6 +39,18 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 		"additionalTextEdits",
 	},
 }
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+	-- Enable underline, use default values
+	underline = true,
+	-- Enable virtual text, override spacing to 4
+	virtual_text = true,
+	signs = {
+		enable = true,
+		priority = 20,
+	},
+})
+
 local function setup_servers()
 	require("lspinstall").setup()
 	local servers = require("lspinstall").installed_servers()

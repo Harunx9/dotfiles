@@ -40,4 +40,6 @@ return require("packer").startup(function()
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 	use({ "wakatime/vim-wakatime" })
+	use({ "L3MON4D3/LuaSnip" })
+	use({ "glepnir/dashboard-nvim" })
 end)
