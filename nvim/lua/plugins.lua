@@ -3,7 +3,18 @@ return require("packer").startup(function()
 	use("wbthomason/packer.nvim")
 	use("eddyekofo94/gruvbox-flat.nvim")
 	use("kyazdani42/nvim-tree.lua")
-	use({ "nvim-treesitter/nvim-treesitter", cmd = { "TSUpdate" } })
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		cmd = { "TSUpdate" },
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				ensure_installed = "maintained",
+				highlight = {
+					enable = true,
+				},
+			})
+		end,
+	})
 	use({
 		"neovim/nvim-lspconfig",
 		requires = { "kabouzeid/nvim-lspinstall", opt = true },
@@ -17,6 +28,7 @@ return require("packer").startup(function()
 			require("plugin_conf.comple")
 		end,
 	})
+	use("glepnir/lspsaga.nvim")
 	use({
 		"mhartington/formatter.nvim",
 		config = function()
@@ -39,6 +51,8 @@ return require("packer").startup(function()
 		end,
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
+	use({ "onsails/lspkind-nvim" })
+	use("lukas-reineke/indent-blankline.nvim")
 	use({ "wakatime/vim-wakatime" })
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "glepnir/dashboard-nvim" })

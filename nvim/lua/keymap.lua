@@ -11,7 +11,7 @@ map("n", "<C-l>", "<C-w><C-l>", { noremap = true })
 map("n", "<C-h>", "<C-w><C-h>", { noremap = true })
 
 map("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true })
-map("n", "<leader>r", ":NvimTreeRefresh<CR>", { noremap = true })
+map("n", "<leader>rf", ":NvimTreeRefresh<CR>", { noremap = true })
 map("n", "<leader>n", ":NvimTreeFindFile<CR>", { noremap = true })
 
 map("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = true })
