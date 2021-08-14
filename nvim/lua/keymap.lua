@@ -1,7 +1,7 @@
 local map = vim.api.nvim_set_keymap
 
 map("", "<leader>w:", ":w<CR>", { noremap = false })
-map("", "<C-w>", ":bd<CR>", { noremap = false })
+map("", "<C-w>", ":Bdelete<CR>", { noremap = false })
 map("", "<leader>bn", ":bn<CR>", { noremap = false })
 map("", "<leader>bp", ":bp<CR>", { noremap = false })
 
