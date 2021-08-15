@@ -1,8 +1,7 @@
-#LINUX
-export ZPLUG_HOME=~/.zplug/
-#macOS
-#export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
+    git clone https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+
+source ~/Git/zsh-snap/znap.zsh  
 
 zstyle ':completion:*' menu select
 
@@ -15,9 +14,15 @@ export VSCODE_GALLERY_RECOMMENDATIONS_URL=''
 export PYTHON=python3
 export GDK_SCALE=1
 export GDK_DPI_SCALE=0.5
-zplug "marlonrichert/zsh-autocomplete"
 
-zplug load --verbose
+znap source "marlonrichert/zsh-autocomplete"
+znap compdef _cargo   'rustup  completions zsh cargo'
+znap compdef _rustup  'rustup  completions zsh'
+ZSH_AUTOSUGGEST_STRATEGY=( history )
+znap source zsh-users/zsh-autosuggestions
+ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
+znap source zsh-users/zsh-syntax-highlighting
+znap source ohmyzsh/ohmyzsh plugins/{docker,docker-compose}
 
 #aliases
 alias ls=lsd
