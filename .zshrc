@@ -23,7 +23,9 @@ ZSH_AUTOSUGGEST_STRATEGY=( history )
 znap source zsh-users/zsh-autosuggestions
 ZSH_HIGHLIGHT_HIGHLIGHTERS=( main brackets )
 znap source zsh-users/zsh-syntax-highlighting
-znap source ohmyzsh/ohmyzsh plugins/{docker,docker-compose}
+znap source ohmyzsh/ohmyzsh plugins/docker-compose
+znap source marlonrichert/zcolors
+znap eval zcolors "zcolors ${(q)LS_COLORS}"
 
 #aliases
 alias ls=lsd
