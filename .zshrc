@@ -4,6 +4,7 @@
 source ~/Git/zsh-snap/znap.zsh  
 
 zstyle ':completion:*' menu select
+export NeovideMultiGrid
 
 export VSCODE_GALLERY_SERVICE_URL='https://marketplace.visualstudio.com/_apis/public/gallery'
 export VSCODE_GALLERY_CACHE_URL='https://vscode.blob.core.windows.net/gallery/index'

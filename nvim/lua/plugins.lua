@@ -1,4 +1,5 @@
 return require("packer").startup(function()
+	use({ "npxbr/glow.nvim" })
 	use({ "TimUntersberger/neogit" })
 	use("wbthomason/packer.nvim")
 	use("eddyekofo94/gruvbox-flat.nvim")
@@ -57,4 +58,11 @@ return require("packer").startup(function()
 	use({ "wakatime/vim-wakatime" })
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "glepnir/dashboard-nvim" })
+	use({
+		"akinsho/dependency-assist.nvim",
+		config = function()
+			require("dependency_assist").setup({})
+		end,
+	})
+	use("famiu/bufdelete.nvim")
 end)
