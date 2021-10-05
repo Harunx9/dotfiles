@@ -3,8 +3,8 @@ require("plugins")
 require("keymap")
 
 -- THEME SETUP
-vim.g.gruvbox_flat_style = "hard"
-vim.cmd([[colorscheme gruvbox-flat]])
+vim.g.onedark_style = "darker"
+vim.cmd([[colorscheme onedark]])
 
 --NvimTree
 vim.g.nvim_tree_git_hl = true

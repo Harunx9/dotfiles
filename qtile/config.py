@@ -83,6 +83,8 @@ keys = [
     Key([mod, "control"], "Escape", lazy.shutdown(), desc="Lock screen"),
     Key([mod], "space", lazy.spawn("rofi -show drun"),
         desc="Run programs from ROFI"),
+
+    Key([mod, "shift"], "f", lazy.window.toggle_fullscreen(),)
 ]
 
 groups = [Group(i) for i in "1234567890"]
@@ -387,12 +389,13 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
     Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(wm_class="steam_app_*"),
+    #Match(wm_class="steam_app_*"),
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
     Match(title="Game"),
 ], border_focus=gruvbox_colors["blue"])
 auto_fullscreen = True
+auto_minimize = False
 focus_on_window_activation = "smart"
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this

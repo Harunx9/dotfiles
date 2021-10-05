@@ -1,7 +1,6 @@
 local status_line = require("galaxyline")
 local status_line_section = status_line.section
-local theme = require("gruvbox.config")
-local colors = require("gruvbox.colors").setup(theme)
+local theme = require("nord.colors")
 local condition = require("galaxyline.condition")
 status_line.short_line_list = { "NvimTree", "vista", "dbui", "packer" }
 

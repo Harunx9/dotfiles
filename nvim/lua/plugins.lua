@@ -1,9 +1,15 @@
 return require("packer").startup(function()
-	use({ "npxbr/glow.nvim" })
+	use({ "npxbr/glow.nvim", run = ":GlowInstall" })
 	use({ "TimUntersberger/neogit" })
 	use("wbthomason/packer.nvim")
-	use("eddyekofo94/gruvbox-flat.nvim")
-	use("kyazdani42/nvim-tree.lua")
+	use("navarasu/onedark.nvim")
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("nvim-tree").setup({})
+		end,
+	})
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
@@ -44,14 +50,14 @@ return require("packer").startup(function()
 		end,
 		requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
 	})
-
 	use({
-		"glepnir/galaxyline.nvim",
-		branch = "main",
-		config = function()
-			require("plugin_conf.galaxyline")
-		end,
+		"hoob3rt/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		config = require("lualine").setup({
+			options = {
+				theme = "onedark",
+			},
+		}),
 	})
 	use({ "onsails/lspkind-nvim" })
 	use("lukas-reineke/indent-blankline.nvim")
