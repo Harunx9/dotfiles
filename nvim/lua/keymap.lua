@@ -18,3 +18,11 @@ map("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>", { no
 map("n", "<space>b", "<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true })
 map("n", "<space>s", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>", { noremap = true })
 map("n", "<space>d", "<cmd>lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>", { noremap = true })
+
+map("t", "<esc>", "<C-\\><C-N>", { noremap = true })
+map("n", "<leader>t", ":terminal<CR>", { noremap = true })
+
+map("t", "<C-h>", "<C-\\><C-N><C-w>h", { noremap = true })
+map("t", "<C-j>", "<C-\\><C-N><C-w>j", { noremap = true })
+map("t", "<C-k>", "<C-\\><C-N><C-w>k", { noremap = true })
+map("t", "<C-l>", "<C-\\><C-N><C-w>l", { noremap = true })

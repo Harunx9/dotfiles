@@ -36,7 +36,15 @@ return require("packer").startup(function()
 			require("plugin_conf.comple")
 		end,
 	})
-	use("glepnir/lspsaga.nvim")
+	use({
+		"weilbith/nvim-code-action-menu",
+		cmd = "CodeActionMenu",
+	})
+	use({
+		"akinsho/bufferline.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = require("bufferline").setup(),
+	})
 	use({
 		"mhartington/formatter.nvim",
 		config = function()

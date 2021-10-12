@@ -10,15 +10,6 @@ require("formatter").setup({
 				}
 			end,
 		},
-		rust = {
-			function()
-				return {
-					exe = "rustfmt",
-					args = { "--emit=stdout" },
-					stdin = true,
-				}
-			end,
-		},
 		lua = {
 			function()
 				return {
