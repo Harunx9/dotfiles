@@ -7,12 +7,34 @@ return (require("packer")).startup(function()
 		"TimUntersberger/neogit",
 	})
 	use("wbthomason/packer.nvim")
-	use("navarasu/onedark.nvim")
+	use({
+		"projekt0n/github-nvim-theme",
+		config = function()
+			require("github-theme").setup({
+				theme_style = "dark",
+				comment_style = "italic",
+				keyword_style = "italic",
+				function_style = "italic",
+				variable_style = "NONE",
+			})
+		end,
+	})
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			(require("nvim-tree")).setup({})
+			require("nvim-tree").setup({
+				diagnostics = {
+					enable = true,
+					icons = {
+						hint = "",
+						info = "",
+						warning = "",
+						error = "",
+					},
+				},
+				update_cwd = true,
+			})
 		end,
 	})
 	use({
@@ -101,11 +123,7 @@ return (require("packer")).startup(function()
 							-- displays diagnostics from defined severity
 							sections = { "error", "warn", "info", "hint" },
 							-- all colors are in format #rrggbb
-							color_error = nil, -- changes diagnostic's error foreground color
-							color_warn = nil, -- changes diagnostic's warn foreground color
-							color_info = nil, -- Changes diagnostic's info foreground color
-							color_hint = nil, -- Changes diagnostic's hint foreground color
-							symbols = { error = "E", warn = "W", info = "I", hint = "H" },
+							symbols = { error = "", warn = "", info = "", hint = "" },
 						},
 					},
 				},

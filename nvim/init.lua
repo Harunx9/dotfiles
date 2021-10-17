@@ -5,10 +5,6 @@ end
 require("keymap")
 
 if vim.fn.has("code") == 0 then
-	-- THEME SETUP
-	vim.g.onedark_style = "darker"
-	vim.cmd([[colorscheme onedark]])
-
 	--NvimTree
 	vim.g.nvim_tree_git_hl = true
 	vim.g.nvim_tree_quit_on_open = true
