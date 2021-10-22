@@ -53,7 +53,7 @@ return (require("packer")).startup(function()
 	use({
 		"neovim/nvim-lspconfig",
 		requires = {
-			"kabouzeid/nvim-lspinstall",
+			"williamboman/nvim-lsp-installer",
 			opt = true,
 		},
 		config = function()

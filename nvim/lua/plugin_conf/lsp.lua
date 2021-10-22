@@ -92,27 +92,19 @@ require("lspkind").init({
 	},
 })
 
-local function setup_servers()
-	require("lspinstall").setup()
-	local servers = require("lspinstall").installed_servers()
-	for _, server in pairs(servers) do
-		require("lspconfig")[server].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			init_options = {
-				codelenses = {
-					test = true,
-					run = true,
-					debug = true,
-				},
+local lsp_installer = require("nvim-lsp-installer")
+
+lsp_installer.on_server_ready(function(server)
+	server:setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		init_options = {
+			codelenses = {
+				test = true,
+				run = true,
+				debug = true,
 			},
-		})
-	end
-end
-
-setup_servers()
-
-require("lspinstall").post_install_hook = function()
-	setup_servers()
-	vim.cmd("bufdo e")
-end
+		},
+	})
+	vim.cmd([[ do User LspAttachBuffers ]])
+end)
