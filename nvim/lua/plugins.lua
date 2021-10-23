@@ -109,23 +109,7 @@ return (require("packer")).startup(function()
 		config = function()
 			(require("lualine")).setup({
 				options = {
-					theme = "onedark",
-				},
-				sections = {
-
-					lualine_c = {
-						"filename",
-						{
-							"diagnostics",
-							-- table of diagnostic sources, available sources:
-							-- nvim_lsp, coc, ale, vim_lsp
-							sources = { "nvim_lsp" },
-							-- displays diagnostics from defined severity
-							sections = { "error", "warn", "info", "hint" },
-							-- all colors are in format #rrggbb
-							symbols = { error = "", warn = "", info = "", hint = "" },
-						},
-					},
+					theme = "github",
 				},
 			})
 		end,
