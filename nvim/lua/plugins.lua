@@ -11,11 +11,11 @@ return (require("packer")).startup(function()
 		"projekt0n/github-nvim-theme",
 		config = function()
 			require("github-theme").setup({
-				theme_style = "dark",
+				theme_style = "dimmed",
 				comment_style = "italic",
 				keyword_style = "italic",
 				function_style = "italic",
-				variable_style = "NONE",
+				variable_style = "bold",
 			})
 		end,
 	})
@@ -138,6 +138,22 @@ return (require("packer")).startup(function()
 		"kristijanhusak/orgmode.nvim",
 		config = function()
 			require("orgmode").setup({})
+		end,
+	})
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				search = {
+					command = "ag",
+					args = {
+						"--nogroup",
+						"--nocolor",
+						"--column",
+					},
+				},
+			})
 		end,
 	})
 end)
