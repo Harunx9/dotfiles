@@ -27,3 +27,6 @@ map("t", "<C-h>", "<C-\\><C-N><C-w>h", { noremap = true })
 map("t", "<C-j>", "<C-\\><C-N><C-w>j", { noremap = true })
 map("t", "<C-k>", "<C-\\><C-N><C-w>k", { noremap = true })
 map("t", "<C-l>", "<C-\\><C-N><C-w>l", { noremap = true })
+
+map("n", "[b", ":BufferLineCyclePrev<CR>", { noremap = true })
+map("n", "]b", ":BufferLineCycleNext<CR>", { noremap = true })

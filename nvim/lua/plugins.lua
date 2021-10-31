@@ -77,7 +77,9 @@ return (require("packer")).startup(function()
 			opt = true,
 		},
 		config = function()
-			(require("bufferline")).setup()
+			(require("bufferline")).setup({
+				diagnostics = "nvim_lsp",
+			})
 		end,
 	})
 	use({
