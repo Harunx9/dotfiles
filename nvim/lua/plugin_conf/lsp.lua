@@ -95,7 +95,7 @@ require("lspkind").init({
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
-	server:setup({
+	local opts = {
 		on_attach = on_attach,
 		capabilities = capabilities,
 		init_options = {
@@ -105,6 +105,15 @@ lsp_installer.on_server_ready(function(server)
 				debug = true,
 			},
 		},
-	})
+	}
+
+	if server.name == "rust_analyzer" then
+		opts.settings = {
+			["rust-analyzer"] = {
+				checkOnSave = { command = "clippy" },
+			},
+		}
+	end
+	server:setup(opts)
 	vim.cmd([[ do User LspAttachBuffers ]])
 end)
