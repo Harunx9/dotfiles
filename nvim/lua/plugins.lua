@@ -7,6 +7,7 @@ return (require("packer")).startup(function()
 		"TimUntersberger/neogit",
 	})
 	use("wbthomason/packer.nvim")
+	use({ "tami5/lspsaga.nvim" })
 	use({
 		"projekt0n/github-nvim-theme",
 		config = function()
@@ -65,10 +66,6 @@ return (require("packer")).startup(function()
 		config = function()
 			require("plugin_conf.comple")
 		end,
-	})
-	use({
-		"weilbith/nvim-code-action-menu",
-		cmd = "CodeActionMenu",
 	})
 	use({
 		"akinsho/bufferline.nvim",
