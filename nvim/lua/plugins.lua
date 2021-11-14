@@ -8,18 +8,7 @@ return (require("packer")).startup(function()
 	})
 	use("wbthomason/packer.nvim")
 	use({ "tami5/lspsaga.nvim" })
-	use({
-		"projekt0n/github-nvim-theme",
-		config = function()
-			require("github-theme").setup({
-				theme_style = "dimmed",
-				comment_style = "italic",
-				keyword_style = "italic",
-				function_style = "italic",
-				variable_style = "bold",
-			})
-		end,
-	})
+	use("Mofiqul/vscode.nvim")
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
@@ -74,8 +63,65 @@ return (require("packer")).startup(function()
 			opt = true,
 		},
 		config = function()
-			(require("bufferline")).setup({
+			require("bufferline").setup({
 				diagnostics = "nvim_lsp",
+				options = {
+					indicator_icon = " ",
+					buffer_close_icon = "",
+					modified_icon = "●",
+					close_icon = "",
+					close_command = "Bdelete %d",
+					right_mouse_command = "Bdelete! %d",
+					left_trunc_marker = "",
+					right_trunc_marker = "",
+					offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
+					show_tab_indicators = true,
+					show_close_icon = false,
+				},
+				highlights = {
+					fill = {
+						guifg = { attribute = "fg", highlight = "Normal" },
+						guibg = { attribute = "bg", highlight = "StatusLineNC" },
+					},
+					background = {
+						guifg = { attribute = "fg", highlight = "Normal" },
+						guibg = { attribute = "bg", highlight = "StatusLine" },
+					},
+					buffer_visible = {
+						gui = "",
+						guifg = { attribute = "fg", highlight = "Normal" },
+						guibg = { attribute = "bg", highlight = "Normal" },
+					},
+					buffer_selected = {
+						gui = "",
+						guifg = { attribute = "fg", highlight = "Normal" },
+						guibg = { attribute = "bg", highlight = "Normal" },
+					},
+					separator = {
+						guifg = { attribute = "bg", highlight = "Normal" },
+						guibg = { attribute = "bg", highlight = "StatusLine" },
+					},
+					separator_selected = {
+						guifg = { attribute = "fg", highlight = "Special" },
+						guibg = { attribute = "bg", highlight = "Normal" },
+					},
+					separator_visible = {
+						guifg = { attribute = "fg", highlight = "Normal" },
+						guibg = { attribute = "bg", highlight = "StatusLineNC" },
+					},
+					close_button = {
+						guifg = { attribute = "fg", highlight = "Normal" },
+						guibg = { attribute = "bg", highlight = "StatusLine" },
+					},
+					close_button_selected = {
+						guifg = { attribute = "fg", highlight = "normal" },
+						guibg = { attribute = "bg", highlight = "normal" },
+					},
+					close_button_visible = {
+						guifg = { attribute = "fg", highlight = "normal" },
+						guibg = { attribute = "bg", highlight = "normal" },
+					},
+				},
 			})
 		end,
 	})
@@ -108,7 +154,7 @@ return (require("packer")).startup(function()
 		config = function()
 			(require("lualine")).setup({
 				options = {
-					theme = "github",
+					theme = "vscode",
 				},
 			})
 		end,
