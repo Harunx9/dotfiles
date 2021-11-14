@@ -1,4 +1,5 @@
 local nvim_lsp = require("lspconfig")
+local cmp = require("cmp")
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -31,7 +32,8 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 	buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
 	properties = {
@@ -40,7 +42,6 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 		"additionalTextEdits",
 	},
 }
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	-- Enable underline, use default values
 	underline = true,
@@ -51,8 +52,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 		priority = 20,
 	},
 })
-
-require("lspkind").init({
+local lsp_kind = require("lspkind")
+lsp_kind.init({
 	-- enables text annotations
 	--
 	-- default: true
@@ -94,6 +95,8 @@ require("lspkind").init({
 
 local lsp_installer = require("nvim-lsp-installer")
 
+-- Setup lspconfig.
+
 lsp_installer.on_server_ready(function(server)
 	local opts = {
 		on_attach = on_attach,
@@ -117,3 +120,38 @@ lsp_installer.on_server_ready(function(server)
 	server:setup(opts)
 	vim.cmd([[ do User LspAttachBuffers ]])
 end)
+
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			require("luasnip").lsp_expand(args.body)
+		end,
+	},
+	formatting = {
+		format = lsp_kind.cmp_format({ with_text = false, maxwidth = 50 }),
+	},
+	mapping = {
+		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+		["<C-e>"] = cmp.mapping({
+			i = cmp.mapping.abort(),
+			c = cmp.mapping.close(),
+		}),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+	},
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" }, -- For luasnip users.
+		{ name = "org" },
+		{ name = "buffer" },
+	}),
+})
+
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline("/", {
+	sources = {
+		{ name = "buffer" },
+	},
+})

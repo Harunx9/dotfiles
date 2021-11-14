@@ -7,11 +7,18 @@ return (require("packer")).startup(function()
 		"TimUntersberger/neogit",
 	})
 	use("wbthomason/packer.nvim")
-	use({ "tami5/lspsaga.nvim" })
+	use({
+		"tami5/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup({})
+		end,
+	})
 	use("Mofiqul/vscode.nvim")
 	use({
 		"kyazdani42/nvim-tree.lua",
-		requires = "kyazdani42/nvim-web-devicons",
+		requires = {
+			{ "kyazdani42/nvim-web-devicons" },
+		},
 		config = function()
 			require("nvim-tree").setup({
 				diagnostics = {
@@ -43,24 +50,23 @@ return (require("packer")).startup(function()
 	use({
 		"neovim/nvim-lspconfig",
 		requires = {
-			"williamboman/nvim-lsp-installer",
-			opt = true,
+			{
+				"williamboman/nvim-lsp-installer",
+			},
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/nvim-cmp" },
 		},
 		config = function()
 			require("plugin_conf.lsp")
 		end,
 	})
 	use({
-		"hrsh7th/nvim-compe",
-		config = function()
-			require("plugin_conf.comple")
-		end,
-	})
-	use({
 		"akinsho/bufferline.nvim",
 		requires = {
-			"kyazdani42/nvim-web-devicons",
-			opt = true,
+			{
+				"kyazdani42/nvim-web-devicons",
+			},
 		},
 		config = function()
 			require("bufferline").setup({
@@ -182,6 +188,24 @@ return (require("packer")).startup(function()
 	use({
 		"kristijanhusak/orgmode.nvim",
 		config = function()
+			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+			parser_config.org = {
+				install_info = {
+					url = "https://github.com/milisims/tree-sitter-org",
+					revision = "main",
+					files = { "src/parser.c", "src/scanner.cc" },
+				},
+				filetype = "org",
+			}
+			require("nvim-treesitter.configs").setup({
+				-- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
+				highlight = {
+					enable = true,
+					disable = { "org" }, -- Remove this to use TS highlighter for some of the highlights (Experimental)
+					additional_vim_regex_highlighting = { "org" }, -- Required since TS highlighter doesn't support all syntax features (conceal)
+				},
+				ensure_installed = { "org" }, -- Or run :TSUpdate org
+			})
 			require("orgmode").setup({})
 		end,
 	})
