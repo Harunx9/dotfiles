@@ -187,6 +187,9 @@ return (require("packer")).startup(function()
 	use("famiu/bufdelete.nvim")
 	use({
 		"kristijanhusak/orgmode.nvim",
+		requires = {
+			{ "akinsho/org-bullets.nvim" },
+		},
 		config = function()
 			local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 			parser_config.org = {
@@ -206,6 +209,10 @@ return (require("packer")).startup(function()
 				},
 				ensure_installed = { "org" }, -- Or run :TSUpdate org
 			})
+			require("org-bullets").setup({
+				symbols = { "◉", "○", "✸", "✿" },
+			})
+
 			require("orgmode").setup({})
 		end,
 	})
