@@ -1,7 +1,7 @@
+source ~/Git/zsh-snap/znap.zsh
 [[ -f ~/Git/zsh-snap/znap.zsh ]] ||
     git clone https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
 
-source ~/Git/zsh-snap/znap.zsh  
 
 zstyle ':completion:*' menu select
 export NeovideMultiGrid
