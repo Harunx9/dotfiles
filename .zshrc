@@ -1,5 +1,6 @@
 [[ -f ~/Git/zsh-snap/znap.zsh ]] ||
-    git clone https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
 
 source ~/Git/zsh-snap/znap.zsh  
 
@@ -16,7 +17,7 @@ export PYTHON=python3
 export GDK_SCALE=1
 export GDK_DPI_SCALE=0.5
 
-znap source "marlonrichert/zsh-autocomplete"
+znap source marlonrichert/zsh-autocomplete
 znap compdef _cargo   'rustup  completions zsh cargo'
 znap compdef _rustup  'rustup  completions zsh'
 ZSH_AUTOSUGGEST_STRATEGY=( history )
