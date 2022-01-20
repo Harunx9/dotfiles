@@ -13,7 +13,14 @@ return (require("packer")).startup(function()
 			require("lspsaga").setup({})
 		end,
 	})
-	use("Mofiqul/vscode.nvim")
+	use({
+		"navarasu/onedark.nvim",
+		config = function()
+			require("onedark").setup({
+				style = "darker",
+			})
+		end,
+	})
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = {
@@ -160,7 +167,7 @@ return (require("packer")).startup(function()
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "vscode",
+					theme = "onedark",
 				},
 			})
 		end,

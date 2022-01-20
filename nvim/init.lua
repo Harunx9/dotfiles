@@ -17,6 +17,5 @@ if vim.fn.has("code") == 0 then
 	--BlankLine
 	vim.g.indent_blankline_buftype_exclude = { "terminal", "dashboard", "NvimTree" }
 	vim.g.indent_blankline_bufname_exclude = { "terminal", "dashboard", "NvimTree" }
-	vim.g.vscode_style = "dark"
-	vim.cmd([[colorscheme vscode]])
+	require("onedark").load()
 end

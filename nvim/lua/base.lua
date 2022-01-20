@@ -24,7 +24,7 @@ options.incsearch = true
 options.splitright = true
 options.splitbelow = true
 options.expandtab = true
-options.guifont = '"JetBrainsMono Nerd Font Mono":24'
+options.guifont = "JetBrainsMono Nerd Font Mono:24"
 options.completeopt = "menuone,noselect"
 options.termguicolors = true
 

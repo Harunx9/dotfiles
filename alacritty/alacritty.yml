@@ -581,7 +581,7 @@ schemes:
       cyan:    '#56b6c2'
       white:   '#d4d4d4'
 # Apply the color scheme.
-colors: *codedark
+colors: *onedark
 # Visual Bell
 
 #
