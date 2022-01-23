@@ -21,6 +21,7 @@ return (require("packer")).startup(function()
 			})
 		end,
 	})
+	use("jubnzv/virtual-types.nvim")
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = {
