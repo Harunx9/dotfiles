@@ -31,6 +31,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 	buf_set_keymap("n", "<leader>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 	buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+	require("virtualtypes").on_attach()
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -64,7 +65,7 @@ lsp_kind.init({
 	-- 'codicons' for codicon preset (requires vscode-codicons font installed)
 	--
 	-- default: 'default'
-	preset = "codicons",
+	preset = "default",
 
 	-- override preset symbols
 	--

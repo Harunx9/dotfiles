@@ -114,7 +114,7 @@ font:
     family: "JetBrainsMono Nerd Font Mono"
 
   # Point size
-  size: 14.0
+  size: 15.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -612,7 +612,6 @@ bell:
   # When set to `true`, selected text will be copied to the primary clipboard.
 save_to_clipboard: true
 
-background_opacity: 1.0
 # Allow terminal applications to change Alacritty's window title.
 dynamic_title: true
 
