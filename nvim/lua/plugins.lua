@@ -42,12 +42,17 @@ return (require("packer")).startup(function()
 			})
 		end,
 	})
+	use({ "p00f/nvim-ts-rainbow" })
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = function()
 			(require("nvim-treesitter.configs")).setup({
 				ensure_installed = "maintained",
+				rainbow = {
+					enable = true,
+					extended_mode = true,
+				},
 				highlight = {
 					enable = true,
 					additional_vim_regex_highlighting = false,
@@ -78,9 +83,9 @@ return (require("packer")).startup(function()
 		},
 		config = function()
 			require("bufferline").setup({
-				diagnostics = "nvim_lsp",
 				options = {
-					indicator_icon = " ",
+					indicator_icon = "▎",
+					diagnostics = "nvim_lsp",
 					buffer_close_icon = "",
 					modified_icon = "●",
 					close_icon = "",
