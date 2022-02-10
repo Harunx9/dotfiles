@@ -122,6 +122,14 @@ lsp_installer.on_server_ready(function(server)
 	vim.cmd([[ do User LspAttachBuffers ]])
 end)
 
+local source_mapping = {
+	buffer = "[Buffer]",
+	nvim_lsp = "[LSP]",
+	nvim_lua = "[Lua]",
+	cmp_tabnine = "[TN]",
+	path = "[Path]",
+}
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -129,8 +137,22 @@ cmp.setup({
 		end,
 	},
 	formatting = {
-		format = lsp_kind.cmp_format({ with_text = false, maxwidth = 50 }),
+		format = function(entry, vim_item)
+			vim_item.kind = lsp_kind.presets.default[vim_item.kind]
+			local menu = source_mapping[entry.source.name]
+			if entry.source.name == "cmp_tabnine" then
+				if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+					menu = entry.completion_item.data.detail .. " " .. menu
+				end
+				vim_item.kind = "?"
+			end
+			vim_item.menu = menu
+			return vim_item
+		end,
 	},
+	-- formatting = {
+	-- 	format = lsp_kind.cmp_format({ maxwidth = 50 }),
+	-- },
 	mapping = {
 		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
@@ -143,7 +165,9 @@ cmp.setup({
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	},
 	sources = cmp.config.sources({
+		{ name = "cmp_tabnine" },
 		{ name = "nvim_lsp" },
+		{ name = "nvim_lua" },
 		{ name = "luasnip" }, -- For luasnip users.
 		{ name = "orgmode" },
 		{ name = "buffer" },

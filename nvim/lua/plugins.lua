@@ -60,6 +60,9 @@ return (require("packer")).startup(function()
 			})
 		end,
 	})
+	use({ "hrsh7th/nvim-cmp" })
+	use({ "hrsh7th/cmp-nvim-lua" })
+	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 	use({
 		"neovim/nvim-lspconfig",
 		requires = {
@@ -68,7 +71,6 @@ return (require("packer")).startup(function()
 			},
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/nvim-cmp" },
 		},
 		config = function()
 			require("plugin_conf.lsp")
