@@ -1,6 +1,8 @@
 configuration {
     modi: "drun,filebrowser,window";
-    theme: "gruvbox-material";
     font: "JetbrainsMono Nerd Font Mono 12";
     show-icons: true;
 }
+@theme "gruvbox-material"
+
+    

@@ -13,14 +13,7 @@ return (require("packer")).startup(function()
 			require("lspsaga").setup({})
 		end,
 	})
-	use({
-		"navarasu/onedark.nvim",
-		config = function()
-			require("onedark").setup({
-				style = "darker",
-			})
-		end,
-	})
+	use("Mofiqul/dracula.nvim")
 	use("jubnzv/virtual-types.nvim")
 	use({
 		"kyazdani42/nvim-tree.lua",
@@ -131,7 +124,7 @@ return (require("packer")).startup(function()
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "onedark",
+					theme = "dracula-nvim",
 				},
 			})
 		end,

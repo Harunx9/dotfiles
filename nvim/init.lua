@@ -17,5 +17,6 @@ if vim.fn.has("code") == 0 then
 	--BlankLine
 	vim.g.indent_blankline_buftype_exclude = { "terminal", "dashboard", "NvimTree" }
 	vim.g.indent_blankline_bufname_exclude = { "terminal", "dashboard", "NvimTree" }
-	require("onedark").load()
+
+	vim.cmd([[colorscheme dracula]])
 end
