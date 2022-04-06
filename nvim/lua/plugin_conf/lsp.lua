@@ -114,7 +114,18 @@ lsp_installer.on_server_ready(function(server)
 	if server.name == "rust_analyzer" then
 		opts.settings = {
 			["rust-analyzer"] = {
-				checkOnSave = { command = "clippy" },
+				inlayHints = {
+					enable = true,
+					chainingHints = true,
+					maxLength = 25,
+					parameterHints = true,
+					typeHints = true,
+					hideNamedConstructorHints = false,
+					typeHintsSeparator = "‣",
+					typeHintsWithVariable = true,
+					chainingHintsSeparator = "‣",
+				},
+				cargo = { loadOutDirsFromCheck = true },
 			},
 		}
 	end

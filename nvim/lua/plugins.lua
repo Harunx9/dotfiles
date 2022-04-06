@@ -13,6 +13,12 @@ return (require("packer")).startup(function()
 			require("lspsaga").setup({})
 		end,
 	})
+	use({
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup({})
+		end,
+	})
 	use("Mofiqul/dracula.nvim")
 	use("jubnzv/virtual-types.nvim")
 	use({
