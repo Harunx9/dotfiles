@@ -1,4 +1,6 @@
 return (require("packer")).startup(function()
+	use("wbthomason/packer.nvim")
+	use("kaiuri/nvim-juliana")
 	use({
 		"npxbr/glow.nvim",
 		run = ":GlowInstall",
@@ -6,7 +8,6 @@ return (require("packer")).startup(function()
 	use({
 		"TimUntersberger/neogit",
 	})
-	use("wbthomason/packer.nvim")
 	use({
 		"tami5/lspsaga.nvim",
 		config = function()
@@ -19,7 +20,6 @@ return (require("packer")).startup(function()
 			require("fidget").setup({})
 		end,
 	})
-	use("Mofiqul/dracula.nvim")
 	use("jubnzv/virtual-types.nvim")
 	use({
 		"kyazdani42/nvim-tree.lua",
@@ -47,14 +47,12 @@ return (require("packer")).startup(function()
 		run = ":TSUpdate",
 		config = function()
 			(require("nvim-treesitter.configs")).setup({
-				ensure_installed = "maintained",
+				hilight = {
+					enable = true,
+				},
 				rainbow = {
 					enable = true,
 					extended_mode = true,
-				},
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = false,
 				},
 			})
 		end,
@@ -85,16 +83,16 @@ return (require("packer")).startup(function()
 		config = function()
 			require("bufferline").setup({
 				options = {
-					indicator_icon = "▎",
+					indicator = { icon = "▎", style = "icon" },
 					diagnostics = "nvim_lsp",
 					buffer_close_icon = "",
 					modified_icon = "●",
 					close_icon = "",
-					close_command = "Bdelete %d",
-					right_mouse_command = "Bdelete! %d",
+					close_command = "bdelete %d",
+					right_mouse_command = "bdelete! %d",
 					left_trunc_marker = "",
 					right_trunc_marker = "",
-					offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
+					offsets = { { filetype = "nvimtree", text = "explorer", text_align = "center" } },
 					show_tab_indicators = true,
 					show_close_icon = false,
 				},
@@ -128,11 +126,7 @@ return (require("packer")).startup(function()
 			opt = true,
 		},
 		config = function()
-			require("lualine").setup({
-				options = {
-					theme = "dracula-nvim",
-				},
-			})
+			require("lualine").setup({})
 		end,
 	})
 	use({
@@ -162,15 +156,6 @@ return (require("packer")).startup(function()
 		},
 		config = function()
 			require("orgmode").setup_ts_grammar()
-			require("nvim-treesitter.configs").setup({
-				-- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-				highlight = {
-					enable = true,
-					disable = { "org" }, -- Remove this to use TS highlighter for some of the highlights (Experimental)
-					additional_vim_regex_highlighting = { "org" }, -- Required since TS highlighter doesn't support all syntax features (conceal)
-				},
-				ensure_installed = { "org" }, -- Or run :TSUpdate org
-			})
 			require("org-bullets").setup({
 				symbols = { "◉", "○", "✸", "✿" },
 			})

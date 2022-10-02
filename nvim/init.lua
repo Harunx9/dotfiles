@@ -18,5 +18,5 @@ if vim.fn.has("code") == 0 then
 	vim.g.indent_blankline_buftype_exclude = { "terminal", "dashboard", "NvimTree" }
 	vim.g.indent_blankline_bufname_exclude = { "terminal", "dashboard", "NvimTree" }
 
-	vim.cmd([[colorscheme dracula]])
+	vim.cmd([[colorscheme juliana]])
 end

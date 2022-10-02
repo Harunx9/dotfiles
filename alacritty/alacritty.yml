@@ -150,6 +150,30 @@ font:
   #draw_bold_text_with_bright_colors: true
 # The definition of color schemes.
 schemes:
+  juliana: &juliana
+    primary:
+        # hard contrast: background = '#303841'
+        background: "0x303841"
+        # soft contrast: background = '#32302f'
+        foreground: "0xd5dee6"
+    normal:
+        black: "0x000000"
+        red: "0xec5f66"
+        green: "0x99c794"
+        yellow: "0xe0af3a"
+        blue: "0x62adff"
+        magenta: "0xedacfd"
+        cyan: "0x5fb4b4"
+        white: "0xcdd9e5"
+    bright:
+        black: "0x333333"
+        red: "0xf97b58"
+        green: "0x99c794"
+        yellow: "0xfac761"
+        blue: "0x5c99d6"
+        magenta: "0xcc8ec6"
+        cyan: "0x5fb4b4"
+        white: "0xffffff"
   dracula: &dracula
    primary:
      background: '#282a36'
@@ -634,7 +658,7 @@ schemes:
       cyan:    '#56b6c2'
       white:   '#d4d4d4'
 # Apply the color scheme.
-colors: *dracula
+colors: *juliana
 # Visual Bell
 
 #

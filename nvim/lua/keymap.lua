@@ -30,3 +30,5 @@ map("t", "<C-l>", "<C-\\><C-N><C-w>l", { noremap = true })
 
 map("n", "[b", ":BufferLineCyclePrev<CR>", { noremap = true })
 map("n", "]b", ":BufferLineCycleNext<CR>", { noremap = true })
+map("n", "[p", ":BufferLinePick<CR>", { noremap = true })
+map("n", "]c", ":BufferLinePickClose<CR>", { noremap = true })
