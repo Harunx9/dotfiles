@@ -9,10 +9,21 @@ return (require("packer")).startup(function()
 		"TimUntersberger/neogit",
 	})
 	use({
-		"tami5/lspsaga.nvim",
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	})
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
 		config = function()
 			require("lspsaga").setup({})
 		end,
+		requires = {
+			{ "nvim-tree/nvim-web-devicons" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
 	})
 	use({
 		"j-hui/fidget.nvim",
@@ -63,11 +74,12 @@ return (require("packer")).startup(function()
 	use({
 		"neovim/nvim-lspconfig",
 		requires = {
-			{
-				"williamboman/nvim-lsp-installer",
-			},
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-buffer" },
+			{
+				"williamboman/mason.nvim",
+			},
+			{ "williamboman/mason-lspconfig.nvim" },
 		},
 		config = function()
 			require("plugin_conf.lsp")
@@ -141,12 +153,11 @@ return (require("packer")).startup(function()
 	})
 	use({
 		"glepnir/dashboard-nvim",
-	})
-	use({
-		"akinsho/dependency-assist.nvim",
+		event = "VimEnter",
 		config = function()
-			(require("dependency_assist")).setup({})
+			require("dashboard").setup({})
 		end,
+		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 	use("famiu/bufdelete.nvim")
 	use({

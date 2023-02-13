@@ -1,5 +1,7 @@
 local nvim_lsp = require("lspconfig")
 local cmp = require("cmp")
+local mason = require("mason")
+local mason_lsp = require("mason-lspconfig")
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -15,8 +17,10 @@ local on_attach = function(client, bufnr)
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	local opts = { noremap = true, silent = true }
+	buf_set_keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
 	buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	buf_set_keymap("n", "gd", "<cmd>Lspsaga lsp_finder<CR>", opts)
+	buf_set_keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts)
+	buf_set_keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>", opts)
 	buf_set_keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
@@ -97,45 +101,6 @@ lsp_kind.init({
 	},
 })
 
-local lsp_installer = require("nvim-lsp-installer")
-
--- Setup lspconfig.
-
-lsp_installer.on_server_ready(function(server)
-	local opts = {
-		on_attach = on_attach,
-		capabilities = capabilities,
-		init_options = {
-			codelenses = {
-				test = true,
-				run = true,
-				debug = true,
-			},
-		},
-	}
-
-	if server.name == "rust_analyzer" then
-		opts.settings = {
-			["rust-analyzer"] = {
-				inlayHints = {
-					enable = true,
-					chainingHints = true,
-					maxLength = 25,
-					parameterHints = true,
-					typeHints = true,
-					hideNamedConstructorHints = false,
-					typeHintsSeparator = "‣",
-					typeHintsWithVariable = true,
-					chainingHintsSeparator = "‣",
-				},
-				cargo = { loadOutDirsFromCheck = true },
-			},
-		}
-	end
-	server:setup(opts)
-	vim.cmd([[ do User LspAttachBuffers ]])
-end)
-
 local source_mapping = {
 	buffer = "[Buffer]",
 	nvim_lsp = "[LSP]",
@@ -143,6 +108,17 @@ local source_mapping = {
 	cmp_tabnine = "[TN]",
 	path = "[Path]",
 }
+
+mason.setup()
+mason_lsp.setup()
+mason_lsp.setup_handlers({
+	function(server_name)
+		require("lspconfig")[server_name].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+	end,
+})
 
 cmp.setup({
 	snippet = {
