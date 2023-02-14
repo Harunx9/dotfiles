@@ -55,10 +55,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	underline = true,
 	-- Enable virtual text, override spacing to 4
 	virtual_text = true,
-	signs = {
-		enable = true,
-		priority = 20,
-	},
+	signs = true,
 })
 local lsp_kind = require("lspkind")
 lsp_kind.init({
@@ -109,11 +106,17 @@ local source_mapping = {
 	path = "[Path]",
 }
 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 mason.setup()
 mason_lsp.setup()
 mason_lsp.setup_handlers({
 	function(server_name)
-		require("lspconfig")[server_name].setup({
+		nvim_lsp[server_name].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
