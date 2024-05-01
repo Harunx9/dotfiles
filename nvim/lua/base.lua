@@ -28,6 +28,7 @@ options.guifont = "JetBrainsMono Nerd Font Mono:h18"
 options.completeopt = "menuone,noselect"
 options.termguicolors = true
 
+
 vim.api.nvim_exec(
 	[[
 augroup FormatAutogroup

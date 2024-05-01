@@ -1,12 +1,4 @@
 require("telescope").setup({
-	defaults = {
-		vimgrep_arguments = {
-			"ag",
-			"--nogroup",
-			"--nocolor",
-			"--column",
-		},
-	},
 	pickers = {
 		-- Your special builtin config goes in here
 		buffers = {
