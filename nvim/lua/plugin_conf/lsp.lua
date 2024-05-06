@@ -82,14 +82,9 @@ lsp_kind.init({
 		Constructor = "",
 		Variable = "",
 		Class = "",
-		Interface = "ﰮ",
-		Module = "",
 		Property = "",
 		Unit = "",
-		Value = "",
 		Enum = "了",
-		Keyword = "",
-		Snippet = "﬌",
 		Color = "",
 		File = "",
 		Folder = "",
@@ -107,7 +102,7 @@ local source_mapping = {
 	path = "[Path]",
 }
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
