@@ -14,13 +14,25 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    "TimUntersberger/neogit",
 
     {
         "lewis6991/gitsigns.nvim",
         config = function()
             require("gitsigns").setup()
         end,
+    },
+
+    {
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",  -- required
+            "sindrets/diffview.nvim", -- optional - Diff integration
+
+            -- Only one of these is needed, not both.
+            "nvim-telescope/telescope.nvim", -- optional
+            "ibhagwan/fzf-lua",              -- optional
+        },
+        config = true
     },
 
     {
@@ -215,12 +227,11 @@ require("lazy").setup({
         end,
     },
     {
-        'navarasu/onedark.nvim',
-        config = function()
-            require('onedark').setup {
-                style = 'darker'
-            }
-            require('onedark').load()
+        "rockyzhang24/arctic.nvim",
+        branch = "v2",
+        dependencies = { "rktjmp/lush.nvim" },
+        config = function() 
+            vim.cmd("colorscheme arctic")
         end
     },
     "github/copilot.vim"
