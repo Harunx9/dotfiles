@@ -5,8 +5,8 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
-config.font = wezterm.font ('AnonymicePro Nerd Font Mono', {weight = 'Bold', italic = false})
-config.font_size=16.0
+config.font = wezterm.font ('OpenDyslexicM Nerd Font', { italic = false, })
+config.font_size=14.0
 -- For example, changing the color scheme:
 config.color_scheme = 'One Dark (Gogh)'
 
