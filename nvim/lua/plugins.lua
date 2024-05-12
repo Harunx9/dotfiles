@@ -209,7 +209,7 @@ require("lazy").setup({
         config = function()
             require("todo-comments").setup({
                 search = {
-                    command = "ag",
+                    command = "rg",
                     args = {
                         "--nogroup",
                         "--nocolor",
