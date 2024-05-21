@@ -163,7 +163,13 @@ require("lazy").setup({
             opt = true,
         },
         config = function()
-            require("lualine").setup({})
+            require("lualine").setup({
+                options = {
+                    -- Disable sections and component separators
+                    component_separators = '',
+                    section_separators = '',
+                }
+            })
         end,
     },
 
@@ -190,6 +196,7 @@ require("lazy").setup({
 
     {
         "kristijanhusak/orgmode.nvim",
+        ft = {"org"},
         dependencies = {
             { "akinsho/org-bullets.nvim" },
         },
@@ -226,13 +233,13 @@ require("lazy").setup({
             require("nvim_comment").setup()
         end,
     },
+
     {
-        "rockyzhang24/arctic.nvim",
-        branch = "v2",
-        dependencies = { "rktjmp/lush.nvim" },
-        config = function() 
-            vim.cmd("colorscheme arctic")
-        end
+        "rebelot/kanagawa.nvim",
+        config = function()
+            vim.cmd("colorscheme kanagawa")
+        end,
     },
+
     "github/copilot.vim"
 })

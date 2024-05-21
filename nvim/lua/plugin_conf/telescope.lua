@@ -1,6 +1,8 @@
 require("telescope").setup({
 	pickers = {
-		-- Your special builtin config goes in here
+        find_files = {
+			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+		},
 		buffers = {
 			sort_lastused = true,
 			mappings = {
