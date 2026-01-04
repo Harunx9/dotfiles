@@ -1,0 +1,12 @@
+{
+	"height" : 30,
+	"spacing": 4,
+	"modules-left": [
+		"niri/workspaces"
+	],
+	"modules-right": ["battery"],
+	"battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    }
+}

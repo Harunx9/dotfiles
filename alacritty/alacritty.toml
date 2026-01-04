@@ -1,0 +1,56 @@
+[general]
+import = ["themes/oxocarbon.toml"]
+live_config_reload = true
+
+[bell]
+animation = "Ease"
+color = "0xffffff"
+duration = 10
+
+[cursor]
+style = "Underline"
+unfocused_hollow = true
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+dynamic_padding = false
+dynamic_title = true
+startup_mode = "Windowed"
+decorations = "None"
+
+[window.dimensions]
+columns = 0
+lines = 0
+
+[window.padding]
+x = 3
+y = 3
+
+[keyboard]

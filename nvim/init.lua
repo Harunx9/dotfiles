@@ -1,4 +1,5 @@
-require("base")
-require("plugins")
-require("keymap")
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
+require "config"
+require "plugins"
