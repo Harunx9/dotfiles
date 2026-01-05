@@ -1,0 +1,115 @@
+@import './colors.css';
+
+* {
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+tooltip {
+    background: @color2;
+    border: 2px solid @color15;
+    border-radius: 3px;
+    opacity: 0.5;
+}
+
+tooltip label {
+    color: @color6;
+}
+
+window#waybar {
+    background: @background;
+    border: 3px solid @color11;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+window#waybar>box {
+    padding: 3px;
+}
+
+
+#workspaces button {
+    padding: 2px 5px;
+    margin: 2px 2px;
+    border-radius: 3px;
+    background: @color15;
+}
+
+#workspaces button.active {
+    color: @color2;
+    background: @color11;
+    font-weight: bolder;
+}
+
+#clock,
+#battery,
+#tray,
+#language,
+#cpu,
+#memory,
+#disk,
+#pulseaudio,
+#bluetooth,
+#group-power,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-power {
+    border-radius: 3px;
+    padding: 1px 5px;
+    margin: 2px 2px;
+    background: @color11;
+}
+
+#pulseaudio {
+    background: @color9;
+}
+
+#bluetooth {
+    background: @color14;
+}
+
+#tray {
+    background: @color7;
+}
+
+#language {
+    background: @color8
+}
+
+#disk {
+    background: @color6
+}
+
+#cpu {
+    background: @color9;
+}
+
+#memory {
+    background: @color8;
+}
+
+#battery.plugged {
+    background: @color14;
+}
+
+#battery.charging {
+    background: @color13;
+}
+
+#battery.critical {
+    background: @color10;
+}
+
+#tray menu {
+    padding: 5px 5px;
+    background: @background;
+    color: @color5;
+    border: 2px solid @color11;
+    border-radius: 5px;
+    margin: 5px
+}

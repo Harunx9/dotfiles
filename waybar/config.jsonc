@@ -1,12 +1,24 @@
 {
-	"height" : 30,
-	"spacing": 4,
-	"modules-left": [
-		"niri/workspaces"
-	],
-	"modules-right": ["battery"],
-	"battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    }
+    "reload_style_on_change": true,
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
+    "height": 34,
+    "modules-left": [
+        "clock",
+        "cpu",
+        "memory",
+        "disk"
+    ],
+    "modules-center": [
+        "niri/workspaces"
+    ],
+    "modules-right": [
+        "niri/language",
+        "battery",
+        "bluetooth",
+        "pulseaudio",
+        "tray",
+        "group/group-power"
+    ]
 }

@@ -1,13 +1,78 @@
-add_newline = false
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$memory_usage\
+$cmd_duration\
+$python\
+$status\
+$character"""
 
-[line_break]
-disabled = true 
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold #33b1ff) [$hostname](bold #ee5396) '
+disabled = false
 
-[git_status]
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-behind = '⇣${count}'
-deleted = " $count"
+[directory]
+style = "#33b1ff"
+truncation_length = 8
+truncation_symbol = '…/'
+truncate_to_repo = true
+home_symbol = '~'
+
+[character]
+success_symbol = "[❯](#42be65)"
+error_symbol = "[❯](#ee5396)"
+vimcmd_symbol = "[❮](#ffab91)"
 
 [git_branch]
-symbol = " "
+format = "[$branch]($style)"
+style = "#525252"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "#3ddbd9"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "#525252"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "#ffab91"
+
+[python]
+format = "[$virtualenv]($style) "
+style = "#525252"
+
+[memory_usage]
+format = '$symbol [${ram_pct}( | ${swap_pct})]($style) '
+disabled = false
+threshold = -1
+symbol = ' '
+style = '#3ddbd9'
+
+[status]
+style = ''
+symbol = '🔴 '
+success_symbol = '🟢'
+format = '[$common_meaning$signal_name$maybe_int]($style) '
+map_symbol = true
+disabled = false
+
+[username]
+style_user = '#dde1e6 bold'
+style_root = '#161616 bold'
+format = '[$user]($style) '
+disabled = true
+show_always = false

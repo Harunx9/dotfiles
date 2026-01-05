@@ -1,0 +1,29 @@
+# Take a look at the mako manpage with the command:
+#   man 5 mako
+# To view all configuration options.
+
+font=JetBrainsMono Nerd Font Propo 12
+format=<b>%a ⏵</b> %s\n%b
+sort=-time
+layer=overlay
+anchor=top-center
+background-color=#161616
+width=300
+height=110
+margin=5
+padding=0,5,10
+border-size=2
+border-color=#33b1ff
+border-radius=15
+icons=0
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+
+[urgency=normal]
+border-color=#82cfff
+
+[urgency=high]
+border-color=#ee95ff
+default-timeout=0
+
