@@ -1,81 +1,82 @@
-vim.pack.add{
+vim.pack.add {
     'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/onsails/lspkind.nvim',
     'https://github.com/mason-org/mason.nvim',
-    'https://github.com/mason-org/mason-lspconfig.nvim',}
+    'https://github.com/mason-org/mason-lspconfig.nvim', }
 
 local mason = require("mason")
 local mason_lsp = require("mason-lspconfig")
 local lsp_kind = require("lspkind")
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	-- Enable underline, use default values
-	underline = true,
-	-- Enable virtual text, override spacing to 4
-	virtual_text = true,
-	signs = true,
+    -- Enable underline, use default values
+    underline = true,
+    -- Enable virtual text, override spacing to 4
+    virtual_text = true,
+    signs = true,
 })
+
 lsp_kind.init({
-	-- enables text annotations
-	--
-	-- default: true
-	mode = "symbol_text",
+    -- enables text annotations
+    --
+    -- default: true
+    mode = "symbol_text",
 
-	-- default symbol map
-	-- can be either 'default' or
-	-- 'codicons' for codicon preset (requires vscode-codicons font installed)
-	--
-	-- default: 'default'
-	preset = "default",
+    -- default symbol map
+    -- can be either 'default' or
+    -- 'codicons' for codicon preset (requires vscode-codicons font installed)
+    --
+    -- default: 'default'
+    preset = "default",
 
-	-- override preset symbols
-	--
-	-- default: {}
-	symbol_map = {
-		Text = "",
-		Method = "ƒ",
-		Function = "",
-		Constructor = "",
-		Variable = "",
-		Class = "",
-		Property = "",
-		Unit = "",
-		Enum = "了",
-		Color = "",
-		File = "",
-		Folder = "",
-		EnumMember = "",
-		Constant = "",
-		Struct = "",
-	},
+    -- override preset symbols
+    --
+    -- default: {}
+    symbol_map = {
+        Text = "",
+        Method = "ƒ",
+        Function = "",
+        Constructor = "",
+        Variable = "",
+        Class = "",
+        Property = "",
+        Unit = "",
+        Enum = "了",
+        Color = "",
+        File = "",
+        Folder = "",
+        EnumMember = "",
+        Constant = "",
+        Struct = "",
+    },
 })
 
 local source_mapping = {
-	buffer = "[Buffer]",
-	nvim_lsp = "[LSP]",
-	nvim_lua = "[Lua]",
-	cmp_tabnine = "[TN]",
-	path = "[Path]",
+    buffer = "[Buffer]",
+    nvim_lsp = "[LSP]",
+    nvim_lua = "[Lua]",
+    cmp_tabnine = "[TN]",
+    path = "[Path]",
 }
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 mason.setup()
 mason_lsp.setup()
 
-vim.api.nvim_create_autocmd('LspAttach',
-{
-    callback = function(ev)
-        local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
-        if client:supports_method('textDocument/completion') then
-            vim.lsp.completion.enable(true, client.id, ev.buf, {autotrigger = true})
+vim.api.nvim_create_autocmd("LspAttach",
+    {
+        callback = function(ev)
+            local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+            if client:supports_method('textDocument/completion') then
+                vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+            end
         end
-    end
-})
+    })
 
 
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -88,4 +89,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         end
     end
 })
-

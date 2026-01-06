@@ -1,0 +1,65 @@
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://yalter.github.io/niri/Configuration:-Window-Rules
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"blueman-manager$"#
+    open-floating true
+    open-focused true
+    default-floating-position x=0 y=0 relative-to="top-right"
+    min-width 50
+    max-width 100
+    min-height 300
+    max-height 300
+}
+
+window-rule {
+    match app-id=r#"org.pulseaudio.pavucontrol$"#
+    open-floating true
+    open-focused true
+    default-floating-position x=0 y=0 relative-to="top-right"
+    min-width 200
+    max-width 250
+    min-height 300
+    max-height 500
+}
+
+
+
+window-rule {
+    match is-active=false
+    opacity 0.95
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id=r#"zen$"# 
+    opacity 1.0
+    draw-border-with-background false
+}
+
+// Example: block out two password managers from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true
+}

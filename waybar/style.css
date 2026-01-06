@@ -22,7 +22,7 @@ tooltip label {
 
 window#waybar {
     background: @background;
-    border: 3px solid @color11;
+    border: 2px solid @color11;
     border-radius: 5px;
     margin: 5px;
 }

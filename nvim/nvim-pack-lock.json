@@ -4,6 +4,10 @@
       "rev": "45c300c31485def326db00d9c857760d50e5c728",
       "src": "https://github.com/felipeagc/fleet-theme-nvim"
     },
+    "lsp-progress.nvim": {
+      "rev": "ae52979ad412371ea6dc39ff70c8dfc681fb42b8",
+      "src": "https://github.com/linrongbin16/lsp-progress.nvim"
+    },
     "lspkind.nvim": {
       "rev": "3ddd1b4edefa425fda5a9f95a4f25578727c0bb3",
       "src": "https://github.com/onsails/lspkind.nvim"

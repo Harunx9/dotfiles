@@ -1,0 +1,21 @@
+// You can configure outputs by their name, which you can fin
+// by running `niri msg outputs` while inside a niri instance.
+// https://yalter.github.io/niri/Configuration:-Outputs
+output "eDP-1" {
+    scale 1
+    transform "normal"
+    position x=0 y=0
+}
+
+output "DP-2" {
+    scale 1.2
+    focus-at-startup
+    transform "normal"
+    position x=0 y=0
+
+}
+
+output "DP-1" {
+    position x=3200 y=0
+    transform "normal"
+}

@@ -1,0 +1,19 @@
+input {
+    focus-follows-mouse
+    keyboard {
+        xkb {
+            layout "pl,us"
+	        options "caps:escape,grp:alt_shift_toggle"
+        }
+
+        numlock
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+
+    mouse {
+    }
+}
