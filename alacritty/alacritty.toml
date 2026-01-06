@@ -53,4 +53,7 @@ lines = 0
 x = 3
 y = 3
 
+[mouse]
+bindings = [ {mouse = "Right", action = "Copy"} ]
+
 [keyboard]

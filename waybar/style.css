@@ -2,8 +2,8 @@
 
 * {
     font-family: "JetBrainsMono Nerd Font Propo";
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     border-radius: 0px;
     padding: 0px;
     margin: 0px;
@@ -25,15 +25,16 @@ window#waybar {
     border: 2px solid @color11;
     border-radius: 5px;
     margin: 5px;
+    color: @color0;
 }
 
 window#waybar>box {
     padding: 3px;
 }
 
-
 #workspaces button {
-    padding: 2px 5px;
+    min-width: 20px;
+    padding: 2px 10px;
     margin: 2px 2px;
     border-radius: 3px;
     background: @color15;
@@ -45,7 +46,12 @@ window#waybar>box {
     font-weight: bolder;
 }
 
+window#waybar.empty #window {
+    background: transparent;
+}
+
 #clock,
+#window,
 #battery,
 #tray,
 #language,
@@ -63,6 +69,10 @@ window#waybar>box {
     padding: 1px 5px;
     margin: 2px 2px;
     background: @color11;
+}
+
+#window {
+    background: @color13;
 }
 
 #pulseaudio {

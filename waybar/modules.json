@@ -11,6 +11,11 @@
     "niri/language": {
         "format": "KB:[{shortDescription}]"
     },
+    "niri/window": {
+        "separate-outputs": true,
+        "icon": true,
+        "max-length": 15
+    },
     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": [

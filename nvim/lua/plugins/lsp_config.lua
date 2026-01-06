@@ -9,29 +9,14 @@ local mason_lsp = require("mason-lspconfig")
 local lsp_kind = require("lspkind")
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    -- Enable underline, use default values
     underline = true,
-    -- Enable virtual text, override spacing to 4
     virtual_text = true,
     signs = true,
 })
 
 lsp_kind.init({
-    -- enables text annotations
-    --
-    -- default: true
     mode = "symbol_text",
-
-    -- default symbol map
-    -- can be either 'default' or
-    -- 'codicons' for codicon preset (requires vscode-codicons font installed)
-    --
-    -- default: 'default'
     preset = "default",
-
-    -- override preset symbols
-    --
-    -- default: {}
     symbol_map = {
         Text = "",
         Method = "ƒ",

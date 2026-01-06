@@ -5,6 +5,34 @@ output "eDP-1" {
     scale 1
     transform "normal"
     position x=0 y=0
+
+    layout {
+        gaps 5
+
+        center-focused-column "never"
+
+        preset-column-widths {
+            proportion 0.33333
+            proportion 0.5
+            proportion 0.66667
+        }
+
+        default-column-width { proportion 0.5; }
+
+        focus-ring {
+            width 2
+            active-color "#33b1ff"
+            inactive-color "#ff7eb6"
+        }
+
+        shadow {
+            on
+            softness 50
+            spread 10
+            offset x=0 y=5
+            color "#393939"
+        }
+    }
 }
 
 output "DP-2" {

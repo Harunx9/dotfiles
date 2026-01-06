@@ -1,5 +1,4 @@
 input {
-    focus-follows-mouse
     keyboard {
         xkb {
             layout "pl,us"
