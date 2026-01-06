@@ -8,7 +8,7 @@ source ~/Git/zsh-snap/znap.zsh
 
 zstyle ':completion:*' menu select
 
-export LS_COLORS="$(vivid generate ayu)"
+export LS_COLORS="$(vivid generate one-dark)"
 
 znap source marlonrichert/zsh-autocomplete
 znap fpath _cargo   'rustup  completions zsh cargo'

@@ -1,7 +1,19 @@
-workspace "main"
-workspace "code"
-workspace "browser"
-workspace "games"
+prefer-no-csd
+workspace "main"{
+    open-on-output "DP-2"
+}
+
+workspace "code"{
+    open-on-output "DP-2"
+}
+
+workspace "browser"{
+    open-on-output "DP-1"
+}
+
+workspace "games"{
+    open-on-output "DP-2"
+}
 
 environment{
 	XDG_SESSION_TYPE "wayland"
@@ -13,9 +25,10 @@ environment{
 }
 
 input {
+    focus-follows-mouse
     keyboard {
         xkb {
-            layout "us,pl"
+            layout "pl,us"
 	        options "caps:escape,grp:alt_shift_toggle"
         }
 
@@ -42,6 +55,7 @@ output "eDP-1" {
 
 cursor {
     xcursor-size 72
+    hide-when-typing
 }
 
 output "DP-2" {
@@ -138,7 +152,7 @@ window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
