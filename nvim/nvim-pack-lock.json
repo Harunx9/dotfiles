@@ -1,5 +1,18 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "6a4914ca987453464a7dfc7fc237a992adb567d0",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "'main'"
+    },
+    "colorful-menu.nvim": {
+      "rev": "b51a659459df8d078201aefc995db8175ed55e84",
+      "src": "https://github.com/xzbdmw/colorful-menu.nvim"
+    },
+    "csharp.nvim": {
+      "rev": "e44e275dabbcfc188ce1a5f504aad778e917c814",
+      "src": "https://github.com/iabdelkareem/csharp.nvim"
+    },
     "fleet-theme-nvim": {
       "rev": "45c300c31485def326db00d9c857760d50e5c728",
       "src": "https://github.com/felipeagc/fleet-theme-nvim"
@@ -28,9 +41,25 @@
       "rev": "d8bf9102692250193b855acd9025a826f1af2729",
       "src": "https://github.com/NeogitOrg/neogit"
     },
+    "nvim-cokeline": {
+      "rev": "9fbed130683b7b6f73198c09e35ba4b33f547c08",
+      "src": "https://github.com/willothy/nvim-cokeline"
+    },
+    "nvim-dap": {
+      "rev": "cdfd55a133f63228c55f91378f12908cb2a78ded",
+      "src": "https://github.com/mfussenegger/nvim-dap"
+    },
+    "nvim-dap-ui": {
+      "rev": "cf91d5e2d07c72903d052f5207511bf7ecdb7122",
+      "src": "https://github.com/rcarriga/nvim-dap-ui"
+    },
     "nvim-lspconfig": {
       "rev": "ac04ec3c2af08e9821b4eb64ede86072b9b213bf",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-nio": {
+      "rev": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
+      "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
       "rev": "300b906a9514d5e0ce02911d371445382fe35a31",
@@ -52,9 +81,21 @@
       "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "rustaceanvim": {
+      "rev": "7589ee18252fce5420a5f204ebd33e5752c24e98",
+      "src": "https://github.com/mrcjkb/rustaceanvim"
+    },
+    "structlog.nvim": {
+      "rev": "45b26a2b1036bb93c0e83f4225e85ab3cee8f476",
+      "src": "https://github.com/Tastyep/structlog.nvim"
+    },
     "telescope.nvim": {
       "rev": "3333a52ff548ba0a68af6d8da1e54f9cd96e9179",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "c7b1488ad0b389763c34bd17a6264424b3da5a52",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
     },
     "vim-wakatime": {
       "rev": "d7973b157a632d1edeff01818f18d67e584eeaff",

@@ -46,3 +46,8 @@ esac
 
 # Created by `pipx` on 2026-01-06 18:04:32
 export PATH="$PATH:/home/harun/.local/bin"
+export PATH="$PATH:/home/harun/.dotnet"
+eval "$(dotnet completions script zsh)"
+
+# opencode
+export PATH=/home/harun/.opencode/bin:$PATH
