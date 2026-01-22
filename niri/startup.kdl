@@ -1,4 +1,4 @@
-spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/ergo.jpg -m fill" 
+spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/1377813.png -m fill" 
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 spawn-at-startup "jetbrains-toolbox"

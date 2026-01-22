@@ -29,7 +29,7 @@ cursor {
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 switch-events{
-    lid-open { spawn "swaylock" "-i" "/home/harun/dotfiles/wallpapers/ergo.jpg"; }
+    lid-open { spawn "swaylock" "-i" "/home/harun/dotfiles/wallpapers/1377813.png"; }
 }
 
 animations {
