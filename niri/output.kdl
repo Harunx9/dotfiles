@@ -8,8 +8,20 @@ output "eDP-1" {
 
     layout {
         gaps 5
+        struts{
+            top 10
+        }
 
         center-focused-column "never"
+
+        tab-indicator {
+            width 6
+            gap 6
+            corner-radius 25
+            gaps-between-tabs 10
+            length total-proportion=1.0
+            position "top"
+        }
 
         preset-column-widths {
             proportion 0.33333

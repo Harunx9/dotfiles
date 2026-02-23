@@ -7,7 +7,7 @@ fastfetch
 source ~/Git/zsh-snap/znap.zsh
 
 zstyle ':completion:*' menu select
-
+export QT_QPA_PLATFORMTHEME=qt6ct
 export LS_COLORS="$(vivid generate one-dark)"
 export XCURSOR_SIZE=32
 export GTK_THEME=oxocarbon-gtk
