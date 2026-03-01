@@ -1,0 +1,43 @@
+hotkey-overlay{
+	skip-at-startup
+}
+spawn-sh-at-startup "swaybg -i /etc/greetd/Login.png -m fill" 
+
+input {
+	keyboard {
+		track-layout "global"
+		repeat-delay 500
+		repeat-rate 40
+		xkb {
+			options "caps:escape_shifted_capslock"
+		}
+	}	
+}
+environment{
+	XDG_SESSION_TYPE "wayland"
+	XDG_SESSION_DESKTOP "niri"
+	XDG_CURRENT_DESKTOP "niri"
+	MOZ_ENABLE_WAYLAND "1"
+	QT_QPA_PLATFORM "wayland"
+	SDL_VIDEODRIVER "wayland"
+	GTK_USE_PORTAL "0"
+	GDK_DEBUG "no-portals"
+}
+animations{
+	off
+}
+
+output "eDP-1"{
+	mode "1920x1080@144.023"
+	scale 1.0
+	transform "normal"
+	background-color "#000000"
+}
+
+spawn-at-startup "sh" "-c" "wlgreet --command \"dbus-run-session niri --session\"; niri msg action quit --skip-confirmation"
+
+window-rule{
+	match title="wlgreet"
+	open-maximized true
+
+}
