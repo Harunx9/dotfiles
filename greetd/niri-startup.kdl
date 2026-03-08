@@ -1,7 +1,6 @@
 hotkey-overlay{
 	skip-at-startup
 }
-spawn-sh-at-startup "swaybg -i /etc/greetd/Login.png -m fill" 
 
 input {
 	keyboard {
@@ -13,31 +12,22 @@ input {
 		}
 	}	
 }
-environment{
-	XDG_SESSION_TYPE "wayland"
-	XDG_SESSION_DESKTOP "niri"
-	XDG_CURRENT_DESKTOP "niri"
-	MOZ_ENABLE_WAYLAND "1"
-	QT_QPA_PLATFORM "wayland"
-	SDL_VIDEODRIVER "wayland"
-	GTK_USE_PORTAL "0"
-	GDK_DEBUG "no-portals"
-}
+
 animations{
 	off
 }
 
-output "eDP-1"{
-	mode "1920x1080@144.023"
-	scale 1.0
-	transform "normal"
-	background-color "#000000"
+output "LG Electronics LG ULTRAFINE 412NTFFA8X051" {
+    scale 1.2
+    focus-at-startup
+    transform "normal"
+    background-color "#161616"
+    position x=0 y=0
 }
 
-spawn-at-startup "sh" "-c" "wlgreet --command \"dbus-run-session niri --session\"; niri msg action quit --skip-confirmation"
-
-window-rule{
-	match title="wlgreet"
-	open-maximized true
-
+output "LG Electronics LG HDR QHD 005NTDV8R810" {
+    off
 }
+
+spawn-sh-at-startup "regreet; niri msg action quit --skip-confirmation"
+

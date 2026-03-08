@@ -20,7 +20,9 @@ cursor {
     hide-when-typing
 }
 
-
+overview {
+    backdrop-color "#161616"
+}
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout

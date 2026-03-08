@@ -1,0 +1,36 @@
+[background]
+path = "/etc/greetd/oxocarbon-evangelion.jpg"
+
+fit = "Cover"
+
+[GTK]
+# Whether to use the dark theme
+application_prefer_dark_theme = true
+
+# Cursor theme name
+cursor_theme_name = "Vanilla-DMZ"
+
+# Whether to blink the cursor
+cursor_blink = true
+
+# Font name and size
+font_name = "JetBrainsMonoNerdFontMono 16"
+
+# Icon theme name
+icon_theme_name = "Papirus-Dark"
+
+theme_name = "phocus"
+
+[commands]
+reboot = ["loginctl", "reboot"]
+poweroff = ["loginctl", "poweroff"]
+
+
+[appearance]
+greeting_msg = "Enter the void"
+
+[widget.clock]
+format = "%a %H:%M"
+resolution = "500ms"
+timezone = "Europe/Warsaw"
+label_width = 150

@@ -35,6 +35,7 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
+eval "$(fnm completions --shell zsh)"
 
 # pnpm
 export PNPM_HOME="/home/harun/.local/share/pnpm"
@@ -52,3 +53,4 @@ eval "$(dotnet completions script zsh)"
 
 # opencode
 export PATH=/home/harun/.opencode/bin:$PATH
+

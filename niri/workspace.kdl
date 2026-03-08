@@ -1,15 +1,15 @@
 workspace "main"{
-    open-on-output "DP-2"
+    open-on-output "LG Electronics LG ULTRAFINE 412NTFA8X051"
 }
 
 workspace "code"{
-    open-on-output "DP-2"
+    open-on-output "LG Electronics LG ULTRAFINE 412NTFA8X051"
 }
 
 workspace "browser"{
-    open-on-output "DP-1"
+    open-on-output "LG Electronics LG HDR QHD 005NTDV8R810"
 }
 
 workspace "games"{
-    open-on-output "DP-2"
+    open-on-output "LG Electronics LG ULTRAFINE 412NTFA8X051"
 }
