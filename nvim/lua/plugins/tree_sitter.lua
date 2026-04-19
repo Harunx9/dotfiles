@@ -1,9 +1,7 @@
-vim.pack.add { 'https://github.com/nvim-treesitter/nvim-treesitter' }
-
 local ts = require 'nvim-treesitter'
 
 ts.setup({
-    ensure_installed = { "lua", "odin", "cpp", "query", "rust" },
+    ensure_installed = { "lua", "odin", "cpp", "query", "rust", "c_sharp" },
     auto_install = true,
     highlight = {
         enable = true,

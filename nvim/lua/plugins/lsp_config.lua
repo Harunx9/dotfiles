@@ -1,12 +1,3 @@
-vim.pack.add {
-    'https://github.com/neovim/nvim-lspconfig',
-    'https://github.com/mason-org/mason.nvim',
-    'https://github.com/xzbdmw/colorful-menu.nvim',
-    'https://github.com/rachartier/tiny-inline-diagnostic.nvim',
-    { src = 'https://github.com/saghen/blink.cmp', version = 'main' },
-    'https://github.com/mason-org/mason-lspconfig.nvim',
-    'https://github.com/rachartier/tiny-inline-diagnostic.nvim' }
-
 local mason = require("mason")
 local mason_lsp = require("mason-lspconfig")
 local blink = require("blink.cmp")
@@ -41,7 +32,19 @@ blink.setup({
     },
     fuzzy = {
         implementation = "rust",
-    }
+    },
+    sources = {
+        default = { 'lsp', 'path', 'easy-dotnet', 'snippets', 'buffer' },
+        providers = {
+            ["easy-dotnet"] = {
+                name = "easy-dotnet",
+                enabled = true,
+                module = "easy-dotnet.completion.blink",
+                score_offset = 10000,
+                async = true,
+            },
+        },
+    },
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {

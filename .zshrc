@@ -1,5 +1,14 @@
 fastfetch
 
+export SSH_AUTH_SOCK=${HOME}/.ssh/agent
+
+if ! pgrep -u ${USER} ssh-agent > /dev/null; then
+    rm -rf ${SSH_AUTH_SOCK}
+fi
+if [ ! -S ${SSH_AUTH_SOCK} ]; then
+    eval $(ssh-agent -a ${SSH_AUTH_SOCK} 2> /dev/null)
+fi
+
 [[ -f ~/Git/zsh-snap/znap.zsh ]] ||
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
@@ -48,6 +57,7 @@ esac
 # Created by `pipx` on 2026-01-06 18:04:32
 export PATH="$PATH:/home/harun/.local/bin"
 export PATH="$PATH:/home/harun/.dotnet"
+export PATH="$PATH:$HOME/.dotnet/tools"
 export DOTNET_ROOT="$HOME/.dotnet"
 eval "$(dotnet completions script zsh)"
 

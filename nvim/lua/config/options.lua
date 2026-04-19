@@ -21,3 +21,5 @@ vim.o.expandtab = true
 vim.o.guifont = "JetBrainsMono Nerd Font Mono:h18"
 vim.o.completeopt = "menuone,noselect"
 vim.o.termguicolors = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

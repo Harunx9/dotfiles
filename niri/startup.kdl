@@ -1,4 +1,5 @@
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "xembedsniproxy"
 spawn-at-startup "qs"
 spawn-at-startup "jetbrains-toolbox"
 spawn-at-startup "nm-applet"
