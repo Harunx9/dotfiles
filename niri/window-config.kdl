@@ -12,6 +12,11 @@ window-rule {
 }
 
 window-rule {
+    match title="^Editor$" 
+    open-floating true
+}
+
+window-rule {
     match title="^Pixilatte$" 
     open-floating true
 }
@@ -44,6 +49,9 @@ window-rule {
     match is-active=false
     opacity 0.95
     draw-border-with-background false
+    background-effect {
+        blur true
+    }
 }
 
 window-rule {

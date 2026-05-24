@@ -3,9 +3,21 @@ local mason_lsp = require("mason-lspconfig")
 local blink = require("blink.cmp")
 local colorful_menu = require('colorful-menu')
 local diagnostics = require('tiny-inline-diagnostic')
+local tiny_code_action = require('tiny-code-action')
+
 
 diagnostics.setup()
-vim.diagnostic.config({ virtual_text = false })
+vim.diagnostic.config({ 
+    virtual_text = false ,
+    signs= {
+        text = {
+            [vim.diagnostic.severity.ERROR] = ' 󰅙',
+            [vim.diagnostic.severity.WARN] = ' ',
+            [vim.diagnostic.severity.INFO] = ' ',
+            [vim.diagnostic.severity.HINT] = ' ',
+        }
+    }
+})
 mason.setup()
 mason_lsp.setup()
 blink.setup({
@@ -67,7 +79,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end, opts)
         vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-        vim.keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, opts)
+        vim.keymap.set({ 'n', 'v' }, '<leader>ca', require("tiny-code-action").code_action, opts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
         vim.keymap.set('n', '<leader>f', function()
             vim.lsp.buf.format { async = true }

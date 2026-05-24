@@ -10,7 +10,7 @@ vim.pack.add {
     'https://github.com/mason-org/mason.nvim',
     'https://github.com/xzbdmw/colorful-menu.nvim',
     'https://github.com/rachartier/tiny-inline-diagnostic.nvim',
-    { src = 'https://github.com/saghen/blink.cmp',       version = 'main' },
+    { src = 'https://github.com/saghen/blink.cmp',       version = 'v1' },
     'https://github.com/mason-org/mason-lspconfig.nvim',
     'https://github.com/rachartier/tiny-inline-diagnostic.nvim',
     'https://github.com/nvim-lualine/lualine.nvim',
@@ -23,5 +23,7 @@ vim.pack.add {
     'https://github.com/nyoom-engineering/oxocarbon.nvim',
     'https://github.com/nvim-treesitter/nvim-treesitter',
     'https://github.com/wakatime/vim-wakatime',
-    'https://github.com/nvimdev/lspsaga.nvim'
+    'https://github.com/nvimdev/lspsaga.nvim',
+    'https://github.com/felipeagc/fleet-theme-nvim',
+    'https://github.com/rachartier/tiny-code-action.nvim'
 }

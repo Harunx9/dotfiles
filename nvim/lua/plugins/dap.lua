@@ -2,19 +2,92 @@ local dap = require('dap')
 local dap_ui = require('dapui')
 
 dap_ui.setup({
+    controls = {
+        element = "repl",
+        enabled = true,
+        icons = {
+            disconnect = "",
+            pause = "",
+            play = "",
+            run_last = "",
+            step_back = "",
+            step_into = "",
+            step_out = "",
+            step_over = "",
+            terminate = ""
+        }
+    },
+    element_mappings = {},
+    expand_lines = true,
+    floating = {
+        border = "single",
+        mappings = {
+            close = { "q", "<Esc>" }
+        }
+    },
+    force_buffers = true,
+    icons = {
+        collapsed = "",
+        current_frame = "",
+        expanded = ""
+    },
     layouts = {
+        {
+            elements = { {
+                id = "scopes",
+                size = 0.25
+            }, {
+                id = "breakpoints",
+                size = 0.25
+            }, {
+                id = "stacks",
+                size = 0.25
+            }, {
+                id = "watches",
+                size = 0.25
+            } },
+            position = "left",
+            size = 40
+        },
         {
             elements = {
                 { id = "easy-dotnet_cpu", size = 0.5 },
                 { id = "easy-dotnet_mem", size = 0.5 },
             },
-            size = 35,
+            size = 40,
             position = "right",
         },
-    },
+        {
+            elements = { {
+                id = "repl",
+                size = 0.5
+            }, {
+                id = "console",
+                size = 0.5
+            } },
+            position = "bottom",
+            size = 10
+        }
+    }
 })
 
-vim.fn.sign_define('DapBreakpoint', { text = '🔴', texthl = '', linehl = '', numhl = '' })
+dap.listeners.before.attach.dapui_config = function()
+    dap_ui.open()
+end
+
+dap.listeners.before.launch.dapui_config = function()
+    dap_ui.open()
+end
+
+dap.listeners.before.event_terminated.dapui_config = function()
+    dap_ui.close()
+end
+
+dap.listeners.before.event_exited.dapui_config = function()
+    dap_ui.close()
+end
+
+vim.fn.sign_define('DapBreakpoint', { text = '', texthl = '', linehl = '', numhl = '' })
 vim.keymap.set("n", "q", function()
     dap.terminate()
     dap.clear_breakpoints()

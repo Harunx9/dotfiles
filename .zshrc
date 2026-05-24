@@ -61,6 +61,9 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 export DOTNET_ROOT="$HOME/.dotnet"
 eval "$(dotnet completions script zsh)"
 
+export EDITOR=nvim
+
 # opencode
 export PATH=/home/harun/.opencode/bin:$PATH
 
+eval "$(opencode completion)"
