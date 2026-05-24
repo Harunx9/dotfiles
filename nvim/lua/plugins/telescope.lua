@@ -6,7 +6,7 @@ telescope.setup({
         layout_config = {
             width = 0.95,
             height = 0.85,
-            preview_cutoff = 80,
+            preview_cutoff = 120,
             flex = {
                 flip_columns = 120,
             },
