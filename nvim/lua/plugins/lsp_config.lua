@@ -3,13 +3,11 @@ local mason_lsp = require("mason-lspconfig")
 local blink = require("blink.cmp")
 local colorful_menu = require('colorful-menu')
 local diagnostics = require('tiny-inline-diagnostic')
-local tiny_code_action = require('tiny-code-action')
-
 
 diagnostics.setup()
-vim.diagnostic.config({ 
-    virtual_text = false ,
-    signs= {
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = ' 󰅙',
             [vim.diagnostic.severity.WARN] = ' ',

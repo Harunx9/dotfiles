@@ -25,5 +25,10 @@ vim.pack.add {
     'https://github.com/wakatime/vim-wakatime',
     'https://github.com/nvimdev/lspsaga.nvim',
     'https://github.com/felipeagc/fleet-theme-nvim',
-    'https://github.com/rachartier/tiny-code-action.nvim'
+    'https://github.com/rachartier/tiny-code-action.nvim',
+    'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
+    {
+        src = "https://github.com/rose-pine/neovim",
+        name = "rose-pine",
+    },
 }

@@ -9,6 +9,10 @@
       "rev": "13f9b7eaa9cd2901b4f8915cfb2483c3be4c8c20",
       "src": "https://github.com/xzbdmw/colorful-menu.nvim"
     },
+    "csharp.nvim": {
+      "rev": "e44e275dabbcfc188ce1a5f504aad778e917c814",
+      "src": "https://github.com/iabdelkareem/csharp.nvim"
+    },
     "easy-dotnet.nvim": {
       "rev": "5d5b3e2491a81efe252004e1876bd67af7dfc9c1",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
@@ -20,6 +24,10 @@
     "lsp-progress.nvim": {
       "rev": "f6d5af10563b895ff846346f57cbd4451439f4c1",
       "src": "https://github.com/linrongbin16/lsp-progress.nvim"
+    },
+    "lspkind.nvim": {
+      "rev": "c7274c48137396526b59d86232eabcdc7fed8a32",
+      "src": "https://github.com/onsails/lspkind.nvim"
     },
     "lspsaga.nvim": {
       "rev": "3e33a6a6c5d379f3d4fae77fae6b53b762a0a30f",
@@ -73,6 +81,10 @@
       "rev": "0d7d35fa946837b8738b17c18d1faa1ac351e7f9",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
+    "oil.nvim": {
+      "rev": "21c669e7bfeb1546ae988b52813138e4d674bbf5",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
     "oxocarbon.nvim": {
       "rev": "a7ba74849a00546a311f8c146320b433900393e7",
       "src": "https://github.com/nyoom-engineering/oxocarbon.nvim"
@@ -80,6 +92,14 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "rainbow-delimiters.nvim": {
+      "rev": "a798325b7f36acc62741d1029930a7b96d4dd4bf",
+      "src": "https://gitlab.com/HiPhish/rainbow-delimiters.nvim"
+    },
+    "rose-pine": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim"
     },
     "rustaceanvim": {
       "rev": "f2f0c1231a5b019dbc1fd6dafac1751c878925a3",
