@@ -4,12 +4,11 @@ require "plugins.structlog"
 require "plugins.file_manager"
 require "plugins.telescope"
 require 'plugins.tree_sitter'
-require 'plugins.rainbow-brackets'
 require 'plugins.theme'
 require 'plugins.wakatime'
 require 'plugins.neogit'
 require 'plugins.bufferline'
 require 'plugins.dap'
 require 'plugins.dotnet'
-require 'plugins.rust'
 require 'plugins.lualine'
+require 'plugins.opencode'

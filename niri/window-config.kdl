@@ -43,11 +43,18 @@ window-rule {
     max-height 500
 }
 
-
+window-rule {
+    match title="^Alacritty$" 
+    opacity 0.90
+    draw-border-with-background false
+    background-effect {
+        blur true
+    }
+}
 
 window-rule {
     match is-active=false
-    opacity 0.95
+    opacity 0.85
     draw-border-with-background false
     background-effect {
         blur true

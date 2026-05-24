@@ -16,19 +16,14 @@ vim.pack.add {
     'https://github.com/nvim-lualine/lualine.nvim',
     'https://github.com/linrongbin16/lsp-progress.nvim',
     'https://github.com/NeogitOrg/neogit',
-    'https://github.com/mrcjkb/rustaceanvim',
     "https://github.com/Tastyep/structlog.nvim",
     'https://github.com/nvim-lua/plenary.nvim',
     'https://github.com/nvim-telescope/telescope.nvim',
-    'https://github.com/nyoom-engineering/oxocarbon.nvim',
     'https://github.com/nvim-treesitter/nvim-treesitter',
     'https://github.com/wakatime/vim-wakatime',
     'https://github.com/nvimdev/lspsaga.nvim',
-    'https://github.com/felipeagc/fleet-theme-nvim',
     'https://github.com/rachartier/tiny-code-action.nvim',
-    'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
-    {
-        src = "https://github.com/rose-pine/neovim",
-        name = "rose-pine",
-    },
+    'https://github.com/EdenEast/nightfox.nvim',
+    'https://github.com/sudo-tee/opencode.nvim',
+    'https://github.com/folke/which-key.nvim'
 }
