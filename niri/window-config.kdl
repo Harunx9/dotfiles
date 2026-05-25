@@ -44,7 +44,16 @@ window-rule {
 }
 
 window-rule {
-    match title="^Alacritty$" 
+    match title="Alacritty" 
+    opacity 0.90
+    draw-border-with-background false
+    background-effect {
+        blur true
+    }
+}
+
+window-rule {
+    match app-id="jetbrains"
     opacity 0.90
     draw-border-with-background false
     background-effect {
@@ -63,6 +72,21 @@ window-rule {
 
 window-rule {
     match app-id=r#"zen$"# 
+    open-on-workspace "browser"
+    opacity 1.0
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id=r#"discord$"# 
+    open-on-workspace "main"
+    opacity 1.0
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id=r#"steam$"# 
+    open-on-workspace "games"
     opacity 1.0
     draw-border-with-background false
 }

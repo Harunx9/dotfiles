@@ -5,3 +5,7 @@ spawn-at-startup "jetbrains-toolbox"
 spawn-at-startup "nm-applet"
 spawn-sh-at-startup "pipewire"
 spawn-sh-at-startup "podman system service --time=0"
+spawn-sh-at-startup "flatpak run com.discordapp.Discord"
+spawn-at-startup "zen"
+spawn-at-startup "steam"
+

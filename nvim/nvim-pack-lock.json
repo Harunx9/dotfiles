@@ -13,10 +13,6 @@
       "rev": "5d5b3e2491a81efe252004e1876bd67af7dfc9c1",
       "src": "https://github.com/GustavEikaas/easy-dotnet.nvim"
     },
-    "fleet-theme-nvim": {
-      "rev": "45c300c31485def326db00d9c857760d50e5c728",
-      "src": "https://github.com/felipeagc/fleet-theme-nvim"
-    },
     "lsp-progress.nvim": {
       "rev": "f6d5af10563b895ff846346f57cbd4451439f4c1",
       "src": "https://github.com/linrongbin16/lsp-progress.nvim"
@@ -81,21 +77,9 @@
       "rev": "99f26ffaf28e95a9f94426deaecf81af88ec1e0b",
       "src": "https://github.com/sudo-tee/opencode.nvim"
     },
-    "oxocarbon.nvim": {
-      "rev": "a7ba74849a00546a311f8c146320b433900393e7",
-      "src": "https://github.com/nyoom-engineering/oxocarbon.nvim"
-    },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
-    "rainbow-delimiters.nvim": {
-      "rev": "a798325b7f36acc62741d1029930a7b96d4dd4bf",
-      "src": "https://gitlab.com/HiPhish/rainbow-delimiters.nvim"
-    },
-    "rose-pine-moon": {
-      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
-      "src": "https://github.com/rose-pine/neovim"
     },
     "structlog.nvim": {
       "rev": "45b26a2b1036bb93c0e83f4225e85ab3cee8f476",
@@ -110,7 +94,7 @@
       "src": "https://github.com/rachartier/tiny-code-action.nvim"
     },
     "tiny-inline-diagnostic.nvim": {
-      "rev": "147af4e49f51dd48f41972de26552872b8ba7b25",
+      "rev": "6bdbc9a2f5a846ff5fc55a998ff97c0e2968b7e5",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
     },
     "vim-wakatime": {
